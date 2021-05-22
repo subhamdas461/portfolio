@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+:root{
+    --sidebar-bg: rgb(77, 77, 83);
+    --body-bg: rgb(61, 59, 66);
+    --side-text: rgb(182, 182, 182);
+    --side-width: 250px;
+  
+}
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    scroll-behavior: smooth !important;
+    
+}
+body{
+    min-width: 380px;
+    overflow-x: hidden;
+}
+#root{
+    position: relative;
+}
+.navbar{
+    height: 60px;
+    background-color: var(--sidebar-bg);
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.navbar > * {
+    margin: 0 1.5em;
+    cursor: pointer;
+}
+.navbar .fa-bars{
+    font-size: 19px;
+    opacity: 0;
+    pointer-events: none;
+}
+.navbar .nav-logo a{
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    font-family:'KoHo', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.sidebar{
+    background: var(--sidebar-bg) ;
+    color: var(--side-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-height: 380px;
+    width: var(--side-width);
+    font-family:'Montserrat', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    user-select: none;
+    box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.404) ;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+}
+.sidebar ul li{
+    transition: all 0.1s ease-out;
+    list-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    letter-spacing: 2.5px;
+    margin: 0.7em 0 0 1.5em;
+}
+.sidebar a{
+    text-decoration: none;
+    color: var(--side-text);
+}
+.sidebar ul a:hover,.dark-mode-btn:hover {
+    color: #fff;
+}
+.collapse{
+    width: 0;
+}
+.dark-mode-btn{
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    transform: translate(-50%);
+    left: 50%;
+    align-items: center;
+    cursor: pointer;
+    font-family:"koho";
+}
+.dark-mode-btn .fas{
+    background-color: rgb(99, 98, 98);
+    padding: 0.3em;
+    color: rgb(212, 212, 212);
+    border-radius: 50%;
+    font-size: 18px;
+}
+.dark-mode-btn p{
+    margin: 0 0.5em;
+    font-size: 0.9em;
+}
+section{
+    background: var(--body-bg);
+    position: absolute;
+    left: var(--side-width);
+    /* width: 100%; */
+    transition: left 0.2s ease-in-out;
+    right: 0;
+    min-width: 380px;
+}
+.section{
+    height: 100vh;
+    position: relative;
+}
+.active-main{
+    /* width: 100vw; */
+    left: 0;
+}
+.section h1{
+    color: rgba(255, 255, 255, 0.781);
+    margin: auto;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: "Montserrat",sans-serif;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: max-content;
+}
+@media only screen and (max-width: 1000px) {
+    .navbar .fa-bars {
+        opacity: 1 ;
+        pointer-events: all;
+    }
+}
+@media only screen and (max-width: 500px) {
+   .sidebar{
+       position: fixed;
+   }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (min-width: 1000px) {
+   .sidebar{
+       width: var(--side-width);
+   }
+   section{
+       left: var(--side-width) !important;
+      
+       right: 0 !important;
+   }
 }
