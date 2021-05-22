@@ -3,7 +3,7 @@
     --body-bg: rgb(61, 59, 66);
     --side-text: rgb(182, 182, 182);
     --side-width: 250px;
-  
+    --btn-hover : rgb(96, 117, 235);
 }
 *{
     margin: 0;
@@ -13,7 +13,7 @@
     
 }
 body{
-    min-width: 380px;
+    min-width: 480px;
     overflow-x: hidden;
 }
 #root{
@@ -114,7 +114,7 @@ section{
     /* width: 100%; */
     transition: left 0.2s ease-in-out;
     right: 0;
-    min-width: 380px;
+    min-width: 390px;
 }
 .section{
     height: 100vh;
@@ -135,15 +135,86 @@ section{
     border-bottom: 2px solid rgb(255, 255, 255);
     width: max-content;
 }
+.home-content{
+    font-family: "Montserrat",sans-serif;
+    color: #fff;
+    width: 390px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+   
+}
+.profile-img{
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1002&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(201, 201, 201);
+    border-radius: 50%;
+    border: 4px solid rgb(255, 255, 255);
+}
+.home-name{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 10px 0 0px 0;
+}
+.home-info{
+    margin: 0px 0 20px 0;
+}
+.resume{
+    background-color: rgb(87, 87, 99);
+    width: 170px;
+    padding: 10px 0;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 19px;
+    transition: background 0.2s;
+    user-select: none;
+}
+.resume:hover{
+    background-color: var(--btn-hover);
+}
+.social-icons{
+    position: absolute;
+    bottom:-80px;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%);
+}
+.social-icons > *{
+    line-height: 40px;
+    background-color: rgb(87, 87, 99);
+    margin: 10px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    transition: background 0.2s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.social-icons > *:hover{
+    background-color: var(--btn-hover);
+}
 @media only screen and (max-width: 1000px) {
     .navbar .fa-bars {
         opacity: 1 ;
         pointer-events: all;
     }
+   
 }
 @media only screen and (max-width: 500px) {
    .sidebar{
        position: fixed;
+   }
+   .home-name{
+       font-size: 29px;
    }
 }
 
