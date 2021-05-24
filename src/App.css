@@ -13,7 +13,7 @@
     
 }
 body{
-    min-width: 480px;
+   
     overflow-x: hidden;
 }
 #root{
@@ -37,8 +37,17 @@ body{
 }
 .navbar .fa-bars{
     font-size: 19px;
-    opacity: 0;
-    pointer-events: none;
+    /* opacity: 0;
+    pointer-events: none; */
+}
+.sidebar .fa-times{
+    position: absolute;
+    font-size: 22px;
+    color: #fff;
+    top: 21px;
+    left: 25px;
+    display: none;
+    cursor: pointer;
 }
 .navbar .nav-logo a{
     font-size: 22px;
@@ -56,7 +65,7 @@ body{
     left: 0;
     bottom: 0;
     min-height: 380px;
-    width: var(--side-width);
+    width: var(--side-width) !important;
     font-family:'Montserrat', sans-serif;
     font-weight: 400;
     display: flex;
@@ -84,7 +93,10 @@ body{
     color: #fff;
 }
 .collapse{
-    width: 0;
+    width: 0 !important;
+}
+.side-active{
+    width: var(--side-width) ;
 }
 .dark-mode-btn{
     position: absolute;
@@ -114,15 +126,16 @@ section{
     /* width: 100%; */
     transition: left 0.2s ease-in-out;
     right: 0;
-    min-width: 390px;
+    min-width: 360px;
 }
 .section{
     height: 100vh;
+    min-height: 600px;
     position: relative;
 }
 .active-main{
     /* width: 100vw; */
-    left: 0;
+    left: 0 !important;
 }
 .section h1{
     color: rgba(255, 255, 255, 0.781);
@@ -138,14 +151,14 @@ section{
 .home-content{
     font-family: "Montserrat",sans-serif;
     color: #fff;
-    width: 390px;
+    width: 100%;
     margin: auto;
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 40%;
     transform: translate(-50%,-50%);
     text-align: center;
-   
+    
 }
 .profile-img{
     width: 250px;
@@ -202,30 +215,35 @@ section{
 .social-icons > *:hover{
     background-color: var(--btn-hover);
 }
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
     .navbar .fa-bars {
         opacity: 1 ;
         pointer-events: all;
     }
    
-}
-@media only screen and (max-width: 500px) {
-   .sidebar{
-       position: fixed;
-   }
-   .home-name{
-       font-size: 29px;
-   }
+} */
+
+@media only screen and (max-width: 700px) {
+   
+    section{
+        left: 0;
+    }
+    .sidebar{
+        width: 0;
+    }
+    .fa-times{
+        display: block !important;
+    }
 }
 
 
 @media only screen and (min-width: 1000px) {
-   .sidebar{
+   /* .sidebar{
        width: var(--side-width);
    }
    section{
        left: var(--side-width) !important;
       
        right: 0 !important;
-   }
+   } */
 }
