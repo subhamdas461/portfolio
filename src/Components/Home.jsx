@@ -11,7 +11,7 @@ function Home(){
                     <i className="fab fa-facebook-f"></i>
                     <i className="fab fa-linkedin"></i>
                     <i className="fab fa-instagram"></i>
-                    <i className="fab fa-github"></i>
+                    <a href="https://github.com/subhamdas461"><i className="fab fa-github"></i></a>
                 </div>
             </div>
         </div>

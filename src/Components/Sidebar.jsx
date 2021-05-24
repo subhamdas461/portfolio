@@ -3,7 +3,6 @@ const toogleModeIcon ={
     light : "fa-sun"
 }
 const handleQuit=(e)=>{
-    console.log(e.target.parentElement);
     e.target.parentElement.classList.remove("side-active")
     e.target.parentElement.classList.add("collapse")
 }

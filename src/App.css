@@ -65,7 +65,7 @@ body{
     left: 0;
     bottom: 0;
     min-height: 380px;
-    width: var(--side-width) !important;
+    width: var(--side-width);
     font-family:'Montserrat', sans-serif;
     font-weight: 400;
     display: flex;
@@ -228,9 +228,9 @@ section{
     section{
         left: 0;
     }
-    .sidebar{
+    /* .sidebar{
         width: 0;
-    }
+    } */
     .fa-times{
         display: block !important;
     }
