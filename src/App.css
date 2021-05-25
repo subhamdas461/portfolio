@@ -37,8 +37,7 @@ body{
 }
 .navbar .fa-bars{
     font-size: 19px;
-    /* opacity: 0;
-    pointer-events: none; */
+    user-select: none;
 }
 .sidebar .fa-times{
     position: absolute;
@@ -82,6 +81,7 @@ body{
     list-style: none;
     font-size: 15px;
     cursor: pointer;
+    width: max-content;
     letter-spacing: 2.5px;
     margin: 0.7em 0 0 1.5em;
 }
@@ -218,35 +218,18 @@ section{
 .social-icons > *:hover{
     background-color: var(--btn-hover);
 }
-/* @media only screen and (max-width: 1000px) {
-    .navbar .fa-bars {
-        opacity: 1 ;
-        pointer-events: all;
-    }
-   
-} */
 
 @media only screen and (max-width: 700px) {
-   
-    section{
-        left: 0;
-    }
-    /* .sidebar{
-        width: 0;
-    } */
     .fa-times{
         display: block !important;
     }
+    /* .sidebar::before{
+        content: "";
+        position: fixed;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(235, 232, 232, 0.418);
+    } */
 }
 
-
-@media only screen and (min-width: 1000px) {
-   /* .sidebar{
-       width: var(--side-width);
-   }
-   section{
-       left: var(--side-width) !important;
-      
-       right: 0 !important;
-   } */
-}
