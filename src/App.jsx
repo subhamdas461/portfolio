@@ -6,23 +6,26 @@ import Navbar from "./Components/Navbar"
 import Contact from "./Components/Contact"
 import Project from "./Components/Project"
 import Experience from "./Components/Experience"
+import { useEffect,useState } from "react"
 
 
-// const sidebar = document.querySelector(".sidebar");
-// const main_content = document.querySelector(".main-content")
-// window.addEventListener('resize',(e)=>{
-   
-//     if(e.target.innerWidth < 700){
-//         sidebar.classList.add("side-active")
-//         main_content.classList.add("active-main")
-//     }
-// })
 
-const App = (props) =>{
+
+const App = () =>{
+    const [mode, setMode] = useState("dark");
+    const sidebar = document.querySelector(".sidebar");
+    const main_content = document.querySelector(".main-content")
+    if(sidebar != null)
+    mode === "dark" ? sidebar.classList.remove("light-mode-sidebar") : sidebar.classList.add("light-mode-sidebar")
+    
+    // useEffect(() => {
+    //     const dark_btn = document.querySelector(".dark-mode-btn")
+    //     console.log(mode);
+    // }, [])
     return(
         <>
-           <Sidebar/>
-           <section className="main-content">
+           <Sidebar mode={mode}  changeTheme={setMode}/>
+           <section className="main-content " mode={mode}>
                 <Navbar/>
                 <Home/>
                 <About/>

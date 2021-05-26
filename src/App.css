@@ -1,9 +1,12 @@
 :root{
-    --sidebar-bg: rgb(77, 77, 83);
-    --body-bg: rgb(61, 59, 66);
-    --side-text: rgb(182, 182, 182);
+    --dark-sidebar-bg: rgb(77, 77, 83);
+    --dark-body-bg: rgb(61, 59, 66);
+    --dark-side-text: rgb(182, 182, 182);
     --side-width: 250px;
     --btn-hover : rgb(96, 117, 235);
+    --light-sidebar-bg : #ececec;
+    --light-side-text : black;
+    --light-body-bg: #fff;
 }
 *{
     margin: 0;
@@ -21,7 +24,7 @@ body{
 }
 .navbar{
     height: 60px;
-    background-color: var(--sidebar-bg);
+    background-color: var(--dark-sidebar-bg);
     position: sticky;
     z-index: 1;
     top: 0;
@@ -31,6 +34,22 @@ body{
     justify-content: space-between;
     color: #fff;
 }
+
+
+.light-mode-navbar{
+    color: black;
+    background-color: var(--light-sidebar-bg);
+}
+.light-mode-sidebar{
+    color: rgb(255, 255, 255) !important;
+    background-color: var(--light-sidebar-bg) !important;
+}
+.light-mode-body{
+    color: black;
+    background-color: var(--light-body-bg);
+}
+
+
 .navbar > * {
     margin: 0 1.5em;
     cursor: pointer;
@@ -38,13 +57,15 @@ body{
 .navbar .fa-bars{
     font-size: 19px;
     user-select: none;
+    padding: 10px;
 }
 .sidebar .fa-times{
     position: absolute;
     font-size: 22px;
     color: #fff;
-    top: 21px;
-    left: 25px;
+    padding: 10px;
+    top: 11px;
+    left: 28px;
     display: none;
     cursor: pointer;
 }
@@ -57,8 +78,8 @@ body{
     letter-spacing: 2px;
 }
 .sidebar{
-    background: var(--sidebar-bg) ;
-    color: var(--side-text);
+    background: var(--dark-sidebar-bg) ;
+    color: var(--dark-side-text);
     position: fixed;
     top: 0;
     left: 0;
@@ -87,7 +108,7 @@ body{
 }
 .sidebar a{
     text-decoration: none;
-    color: var(--side-text);
+    color: var(--dark-side-text);
 }
 .sidebar ul a:hover,.dark-mode-btn:hover {
     color: #fff;
@@ -120,7 +141,7 @@ body{
     font-size: 0.9em;
 }
 section{
-    background: var(--body-bg);
+    background: var(--dark-body-bg);
     position: absolute;
     left: var(--side-width);
     /* width: 100%; */
@@ -129,8 +150,9 @@ section{
     min-width: 360px;
 }
 .section{
-    height: 100vh;
-    min-height: 600px;
+    /* height: 0vh; */
+    max-height: 100vh;
+    min-height: 680px;
     position: relative;
 }
 .active-main{
@@ -138,24 +160,34 @@ section{
     left: 0 !important;
 }
 .section h1{
-    color: rgba(255, 255, 255, 0.781);
+    color: rgb(255, 255, 255);
     margin: auto;
     position: absolute;
     top: 70px;
     left: 50%;
     transform: translate(-50%);
     font-family: "Montserrat",sans-serif;
-    border-bottom: 2px solid rgb(255, 255, 255);
     width: max-content;
+}
+.section h1::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 5px;
+    bottom: -10px;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(177, 177, 177);
 }
 .home-content{
     font-family: "Montserrat",sans-serif;
     color: #fff;
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 44%;
     transform: translate(-50%,-50%);
     text-align: center;
     
@@ -165,7 +197,7 @@ section{
     height: 250px;
     margin: auto;
     background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1002&q=80");
-    background-size: cover;
+    background-size: 120%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgb(201, 201, 201);
@@ -222,6 +254,10 @@ section{
 @media only screen and (max-width: 700px) {
     .fa-times{
         display: block !important;
+    }
+    .profile-img{
+        width: 200px;
+        height: 200px;
     }
     /* .sidebar::before{
         content: "";
