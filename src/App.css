@@ -1,6 +1,6 @@
 :root{
     --dark-sidebar-bg: rgb(77, 77, 83);
-    --dark-body-bg: rgb(61, 59, 66);
+    --dark-body-bg: #3d3b42;
     --dark-side-text: rgb(182, 182, 182);
     --side-width: 250px;
     --btn-hover : rgb(96, 117, 235);
@@ -150,8 +150,7 @@ section{
     min-width: 360px;
 }
 .section{
-    /* height: 0vh; */
-    max-height: 100vh;
+    height: 95vh;
     min-height: 680px;
     position: relative;
 }
