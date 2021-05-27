@@ -8,12 +8,12 @@ const handleQuit=(e)=>{
 }
 function Sidebar(props){
     let handleMode=()=>{
-        props.mode == "dark"? props.changeTheme("light"): props.changeTheme("dark");
+        props.mode === "dark"? props.changeTheme("light"): props.changeTheme("dark");
         
     }
     return(
         <div className="sidebar">
-            <i className="fas fa-times" onClick={handleQuit}></i>
+            <i className="icon fas fa-times" onClick={handleQuit}></i>
             <ul>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
@@ -23,8 +23,8 @@ function Sidebar(props){
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
             <div className="dark-mode-btn" onClick={handleMode}>
-                <i className={`fas ${toogleModeIcon.light}`}></i>
-                <p>Light Mode</p>
+                <i className={`fas ${props.mode === "dark"?toogleModeIcon.light:toogleModeIcon.dark}`}></i>
+                <p>{props.mode==="dark"? "Light": "Dark"} Mode</p>
             </div>
         </div>
     )

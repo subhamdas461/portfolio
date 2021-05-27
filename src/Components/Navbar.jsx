@@ -44,7 +44,7 @@ function Navbar(){
 
     return(
         <div className="navbar">
-            <i className="fa fa-bars" onClick={handleToggle}></i>
+            <i className="icon fas fa-bars" onClick={handleToggle}></i>
             <h2 className="nav-logo"><a href="#home">PORTFOLIO</a></h2>
         </div>
     )
