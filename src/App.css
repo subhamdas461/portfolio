@@ -4,9 +4,9 @@
     --dark-side-text: rgb(182, 182, 182);
     --side-width: 250px;
     --btn-hover : rgb(96, 117, 235);
-    --light-sidebar-bg : #ececec;
-    --light-side-text : black;
-    --light-body-bg: #fff;
+    --light-sidebar-bg : #f0effa;
+    --light-side-text : #000000;
+    --light-body-bg: rgb(252, 252, 252);
 }
 *{
     margin: 0;
@@ -119,7 +119,7 @@ body{
     justify-content: center;
     z-index: 2;
     user-select: none;
-    box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.404) ;
+    box-shadow: -2.5px 0 10px 0 rgba(0, 0, 0, 0.404) ;
     transition: 0.2s ease-in-out;
     overflow: hidden;
 }
@@ -190,10 +190,10 @@ section{
 .section h1{
     color: rgb(255, 255, 255);
     margin: auto;
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%);
+    position: relative;
+    top: 60px;
+    /* left: 50%; */
+    /* transform: translate(-50%); */
     font-family: "Montserrat",sans-serif;
     width: max-content;
 }
@@ -278,6 +278,16 @@ section{
 }
 .social-icons > *:hover{
     background-color: var(--btn-hover);
+}
+
+.contact-inputs{
+    background-color: red;
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
 }
 
 @media only screen and (max-width: 700px) {

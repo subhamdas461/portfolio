@@ -14,13 +14,15 @@ const handleToggle = (item)=>{
     }
 }
 
-function Navbar(){
+function Navbar(props){
+    let light_navbar = props.mode === "dark" ? "": "light-mode-navbar"
+    let light_icon = props.mode === "dark" ? "": "light-icon"
     useEffect(() => {
         const sidebar = document.querySelector(".sidebar");
         const main_content = document.querySelector(".main-content")
         if(window.innerWidth<700){
            
-            main_content.classList.add("active-main")
+            // main_content.classList.add("active-main")
             sidebar.classList.add("collapse")
         }
         window.addEventListener("resize",()=>{
@@ -40,11 +42,10 @@ function Navbar(){
 
             }
         })
-     }, []);
-
+    }, []);
     return(
-        <div className="navbar">
-            <i className="icon fas fa-bars" onClick={handleToggle}></i>
+        <div className={`navbar ${light_navbar}`}>
+            <i className={`icon fas fa-bars ${light_icon}`} onClick={handleToggle}></i>
             <h2 className="nav-logo"><a href="#home">PORTFOLIO</a></h2>
         </div>
     )

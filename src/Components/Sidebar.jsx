@@ -6,14 +6,17 @@ const handleQuit=(e)=>{
     e.target.parentElement.classList.remove("side-active")
     e.target.parentElement.classList.add("collapse")
 }
+
 function Sidebar(props){
     let handleMode=()=>{
         props.mode === "dark"? props.changeTheme("light"): props.changeTheme("dark");
         
     }
+    let light_sidebar = props.mode === "dark" ? "": "light-mode-sidebar"
+    let light_icon = props.mode === "dark" ? "": "light-icon"
     return(
-        <div className="sidebar">
-            <i className="icon fas fa-times" onClick={handleQuit}></i>
+        <div className={`sidebar ${light_sidebar}`}>
+            <i className={`icon fas fa-times ${light_icon}`} onClick={handleQuit}></i>
             <ul>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
