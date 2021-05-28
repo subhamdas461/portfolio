@@ -27,7 +27,7 @@ function Sidebar(props){
             </ul>
             <div className="dark-mode-btn" onClick={handleMode}>
                 <i className={`fas ${props.mode === "dark"?toogleModeIcon.light:toogleModeIcon.dark}`}></i>
-                <p>{props.mode==="dark"? "Light": "Dark"} Mode</p>
+                <p>{props.mode==="dark"? "Light": "Dark"}Mode</p>
             </div>
         </div>
     )

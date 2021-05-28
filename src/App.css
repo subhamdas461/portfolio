@@ -1,5 +1,5 @@
 :root{
-    --dark-sidebar-bg: rgb(77, 77, 83);
+    --dark-sidebar-bg: #4d4d53;
     --dark-body-bg: #3d3b42;
     --dark-side-text: rgb(182, 182, 182);
     --side-width: 250px;
@@ -70,7 +70,13 @@ body{
 .light-mode-section .profile-img{
     border-color:var(--dark-body-bg);
 }
-
+.light-mode-section .home-info{
+    color: var(--dark-sidebar-bg);
+}
+.light-mode-section .social-icons > *{
+    color: var(--dark-body-bg);
+    background-color: var(--light-sidebar-bg);
+}
 .light-icon{
     color: var(--dark-body-bg) !important;
 }
@@ -160,10 +166,10 @@ body{
 
 .dark-mode-btn .fas{
     background-color: rgb(99, 98, 98);
-    padding: 0.3em;
+    padding: 0.5em;
     color: rgb(212, 212, 212);
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 14px;
 }
 .dark-mode-btn p{
     margin: 0 0.5em;
@@ -191,7 +197,10 @@ section{
     color: rgb(255, 255, 255);
     margin: auto;
     position: relative;
-    top: 60px;
+    top: 70px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     /* left: 50%; */
     /* transform: translate(-50%); */
     font-family: "Montserrat",sans-serif;
@@ -200,9 +209,9 @@ section{
 .section h1::before{
     content: "";
     position: absolute;
-    width: 40%;
-    height: 5px;
-    bottom: -10px;
+    width: 50%;
+    height: 3px;
+    bottom: -12px;
     border-radius: 10px;
     left: 50%;
     transform: translate(-50%);
@@ -239,6 +248,7 @@ section{
 }
 .home-info{
     margin: 0px 0 20px 0;
+    
 }
 .resume{
     color: #fff !important;
@@ -256,8 +266,8 @@ section{
     background-color: var(--btn-hover);
 }
 .social-icons{
-    position: absolute;
-    bottom:-80px;
+    position: relative;
+    bottom:-120px;
     left: 50%;
     width: max-content;
     transform: translate(-50%);
@@ -278,6 +288,7 @@ section{
 }
 .social-icons > *:hover{
     background-color: var(--btn-hover);
+    color: #fff;
 }
 
 .contact-inputs{
