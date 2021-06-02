@@ -7,6 +7,7 @@ import Contact from "./Components/Contact"
 import Project from "./Components/Project"
 import Experience from "./Components/Experience"
 import { useState } from "react"
+import Footer from "./Components/Footer"
 
 const App = () =>{
     const [mode, setMode] = useState("dark");
@@ -46,6 +47,7 @@ const App = () =>{
                 <Experience/>
                 <Project/>
                 <Contact/>
+                <Footer/>
            </section>
         </>
         

@@ -77,6 +77,13 @@ body{
     color: var(--dark-body-bg);
     background-color: var(--light-sidebar-bg);
 }
+.light-mode-section .contact-inputs >*{
+    background-color: var(--light-sidebar-bg);
+    color: var(--dark-body-bg);
+}
+.light-mode-section .contact-inputs button:hover{
+    color: #ffffff;
+}
 .light-icon{
     color: var(--dark-body-bg) !important;
 }
@@ -207,6 +214,7 @@ section{
     width: max-content;
 }
 .section h1::before{
+    
     content: "";
     position: absolute;
     width: 50%;
@@ -292,15 +300,48 @@ section{
 }
 
 .contact-inputs{
-    background-color: red;
+    
     position: relative;
     margin: auto;
-    width: fit-content;
+    width: 70vmin;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    top: 100px;
+    top: 150px;
 }
+.contact-inputs > *{
+    margin: 10px 0;
+    font-size: 16px;
+    height: 30px;
+    color: #fff;
+    font-family: "montserrat",sans-serif ;
+    padding:5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--dark-sidebar-bg);
+}
+.contact-inputs textarea{
+    height: 150px;
+    resize: none;
+}
+.contact-inputs button{
+    height: 50px;
+    cursor: pointer;
+    transition:  0.2s ;
 
+}
+.contact-inputs button:hover{
+    background-color: var(--btn-hover);
+
+}
+footer{
+    background-color: #fff;
+    position: relative;
+    top: -10px;
+    bottom: 0;
+    /* height: 100px;a */
+}
 @media only screen and (max-width: 700px) {
     .fa-times{
         display: block !important;
@@ -308,6 +349,9 @@ section{
     .profile-img{
         width: 200px;
         height: 200px;
+    }
+    .contact-inputs{
+        width: 85%;
     }
     /* .sidebar::before{
         content: "";
