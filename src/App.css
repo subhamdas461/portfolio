@@ -2,7 +2,7 @@
     --dark-sidebar-bg: #4d4d53;
     --dark-body-bg: #3d3b42;
     --dark-side-text: rgb(182, 182, 182);
-    --side-width: 250px;
+    --side-width: calc(3vw + 230px);
     --btn-hover : rgb(96, 117, 235);
     --light-sidebar-bg : #f0effa;
     --light-side-text : #000000;
@@ -11,9 +11,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
-    
+    box-sizing: border-box; 
 }
 html{
     scroll-behavior: smooth;
@@ -236,7 +234,7 @@ section{
     font-family: "Montserrat",sans-serif;
     color: #fff;
     width: 100%;
-    /* margin: auto; */
+    
     position: absolute;
     left: 50%;
     top: 50%;
@@ -257,7 +255,7 @@ section{
     border: 7px solid rgb(255, 255, 255);
 }
 .home-name{
-    font-size: 32px;
+    font-size: calc(1.3vw + 25px);
     font-weight: 600;
     margin: 10px 0 0px 0;
 }
@@ -305,7 +303,52 @@ section{
     background-color: var(--btn-hover);
     color: #fff;
 }
+/* Skills ---- */
+.skill-container{
+    /* position: relative;
+    top: 150px; */
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.skill-item{
+    background-color: rgb(81, 81, 92);
+    margin: 10px;
+    height: 60px;
+}
+.skill-item .progress{
+    height: 7px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 70px;
+    background-color: #fff;
+    position: relative;
+    /* overflow: hidden; */
+}
+.skill-item .progressbar{
+    position: absolute;
+    z-index: 1;
+    border-radius: 70px;
+    /* width: 70%; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+}
+.skill-item .progressbar::before{
+    /* content: "";
+    position: absolute;
+    z-index: 1;
+    height: 13px;
+    top: -50%;
+    right: 0;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    width: 13px;
+    transform: translate(50%); */
 
+}
+/* ----------- */
 .contact-inputs{
     
     position: absolute;
@@ -319,7 +362,7 @@ section{
     transform: translate(-50%);
 }
 .contact-inputs > *{
-    box-sizing: border-box;
+  
     margin: 10px 0;
     font-size: 16px;
     height: 40px;
@@ -338,6 +381,9 @@ section{
     height: 150px;
     resize: none;
 }
+.contact-inputs input:focus,.contact-inputs textarea:focus{
+    border:  3px solid var(--btn-hover);
+}
 .contact-inputs button{
     height: 50px;
     font-size: 20px;
@@ -351,10 +397,13 @@ section{
 
 }
 footer{
-    background-color: rgb(42, 40, 49);
+    background-color: rgb(78, 75, 88);
     
-    
-    height: 100px;
+    text-align: center;
+    color: #fff;
+    font-family: "montserrat",sans-serif;
+    line-height: 60px;
+    height: 60px;
 }
 @media only screen and (max-width: 900px){
     .contact-inputs{
@@ -369,7 +418,9 @@ footer{
         width: 200px;
         height: 200px;
     }
-   
+    .skill-container{
+        display: block;
+    }
     /* .sidebar::before{
         content: "";
         position: fixed;

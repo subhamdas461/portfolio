@@ -33,7 +33,7 @@ function Contact(){
     return(
         <div id="contact" className="contact section">
            
-            <h1>Contact</h1>
+            <h1>Get in Touch</h1>
            
            
 
@@ -69,10 +69,11 @@ function Contact(){
                         value={message}
                         placeholder="Message"
                     ></textarea>
-                    <button onClick={sendMessage} className="send-btn">Send</button>
+                    <button onClick={sendMessage} className="send-btn">Send Message</button>
                     
                 </div>
            
+                
         </div>
     )
 }

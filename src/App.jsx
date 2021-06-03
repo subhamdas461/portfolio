@@ -8,7 +8,7 @@ import Project from "./Components/Project"
 import Experience from "./Components/Experience"
 import { useState } from "react"
 import Footer from "./Components/Footer"
-import Skills from "./Components/Skills"
+import Skills from "./Components/Skills/Skills"
 
 const App = () =>{
     const [mode, setMode] = useState("dark");
@@ -16,6 +16,7 @@ const App = () =>{
     let light_section = mode === "dark" ? "": "light-mode-section"
     return(
         <>
+            
            <Sidebar mode={mode}  changeTheme={setMode}/>
            <section className={`main-content ${window.innerWidth<700 ? "active-main": ""} ${light_section}`}>
                 <Navbar mode={mode}/>
@@ -28,8 +29,10 @@ const App = () =>{
                 <Contact/>
                 <Footer/>
            </section>
+           
         </>
         
     )
 }
 export default App;
+
