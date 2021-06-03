@@ -1,7 +1,8 @@
 import {useState} from 'react';
 
-function Contact(){
 
+function Contact(){
+    
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -19,7 +20,8 @@ function Contact(){
             setMessage(value)
         }
     }
-    const sendMessage =()=>{
+    const sendMessage =(e)=>{
+        e.preventDefault();
         const msgObject = {
             name,
             email,
@@ -30,42 +32,47 @@ function Contact(){
 
     return(
         <div id="contact" className="contact section">
+           
             <h1>Contact</h1>
-            <div className="contact-inputs">
-                <input 
-                    type="text"
-                    formNoValidate
-                    autoComplete="off"
-                    name="name" 
-                    id="name-inp"
-                    onChange={handleValue}
-                    value={name}
-                    placeholder="Name"
-                />
-                <input
-                    formNoValidate
-                    autoComplete="off"
-                    type="text" 
-                    name="email" 
-                    id="email-inp"
-                    onChange={handleValue}
-                    value={email}
-                    placeholder="Email"
-                />
-                <textarea
-                    formNoValidate="false"
-                    autoComplete="off"
-                    cols="50"
-                    rows="40"
-                    name="message" 
-                    id="msg-inp"
-                    onChange={handleValue}
-                    value={message}
-                    placeholder="Message"
-                />
-                <button onClick={sendMessage} className="send-btn">Send</button>
-                
-            </div>
+           
+           
+
+                <div className="contact-inputs">
+
+                    <input 
+                        type="text"
+                        spellCheck="false"
+                        autoComplete="off"
+                        name="name" 
+                        id="name-inp"
+                        onChange={handleValue}
+                        value={name}
+                        placeholder="Name"
+                    />
+                    <input
+                        spellCheck="false"
+                        autoComplete="off"
+                        type="text" 
+                        name="email" 
+                        id="email-inp"
+                        onChange={handleValue}
+                        value={email}
+                        placeholder="Email"
+                    />
+                    <textarea
+                        
+                        spellCheck="false"
+                        autoComplete="off"
+                        name="message" 
+                        id="msg-inp"
+                        onChange={handleValue}
+                        value={message}
+                        placeholder="Message"
+                    ></textarea>
+                    <button onClick={sendMessage} className="send-btn">Send</button>
+                    
+                </div>
+           
         </div>
     )
 }

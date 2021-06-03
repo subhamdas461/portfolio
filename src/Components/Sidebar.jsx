@@ -21,14 +21,18 @@ function Sidebar(props){
     return(
         <div className={`sidebar ${light_sidebar}`}>
             <i className={`icon fas fa-times ${light_icon}`} onClick={handleQuit}></i>
+            
             <ul >
+
                 <li><a onClick={hideSide} href="#home">HOME</a></li>
                 <li><a onClick={hideSide} href="#about">ABOUT</a></li>
                 <li><a onClick={hideSide} href="#education">EDUCATION</a></li>
+                <li><a onClick={hideSide} href="#skills">SKILLS</a></li>
                 <li><a onClick={hideSide} href="#experience">EXPERIENCE</a></li>
                 <li><a onClick={hideSide} href="#project">PROJECTS</a></li>
                 <li><a onClick={hideSide} href="#contact">CONTACT</a></li>
             </ul>
+            
             <div className="dark-mode-btn" onClick={handleMode}>
                 <i className={`fas ${props.mode === "dark"?toogleModeIcon.light:toogleModeIcon.dark}`}></i>
                 <p>{props.mode==="dark"? "Light": "Dark"}Mode</p>
