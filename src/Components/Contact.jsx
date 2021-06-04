@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 
-function Contact(){
+function Contact(props){
     
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -34,9 +34,9 @@ function Contact(){
         <div id="contact" className="contact section">
            
             <h1>Get in Touch</h1>
-           
-           
-
+                <p style={{
+                    color: props.mode==="light"?"black":""
+                }}>Let's Connect!</p>
                 <div className="contact-inputs">
 
                     <input 
@@ -72,8 +72,11 @@ function Contact(){
                     <button onClick={sendMessage} className="send-btn">Send Message</button>
                     
                 </div>
-           
-                
+                {/* <p style={{
+                    marginTop:"420px",
+                    color: props.mode==="light"?"black":""
+                }}>Or send me an email at <span>subhamdas461@gmail.com</span></p>
+                 */}
         </div>
     )
 }

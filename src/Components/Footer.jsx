@@ -5,7 +5,7 @@ function Footer() {
    
     return (
         <footer>
-           {code} with &nbsp;<i className="fas fa-heart"></i> &nbsp;by Subham Das
+           <span>{code} with &nbsp;<i className="fas fa-heart"></i> &nbsp;by Subham Das</span>
         </footer>
     )
 }

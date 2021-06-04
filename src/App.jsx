@@ -26,7 +26,7 @@ const App = () =>{
                 <Skills/>
                 <Experience/>
                 <Project/>
-                <Contact/>
+                <Contact mode={mode}/>
                 <Footer/>
            </section>
            

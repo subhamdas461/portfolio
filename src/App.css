@@ -12,17 +12,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
-}
-html{
     scroll-behavior: smooth;
-
 }
 body{
-   
+    transition:  1s;
     overflow-x: hidden;
-}
-#root{
-    /* position: relative; */
 }
 .navbar{
     height: 60px;
@@ -35,6 +29,7 @@ body{
     align-items: center;
     justify-content: space-between;
     color: #fff;
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.158);
 }
 
 
@@ -83,6 +78,15 @@ body{
     background-color: var(--light-sidebar-bg);
     color: var(--dark-body-bg);
 }
+.light-mode-section .skill-item{
+    background-color: rgba(201, 211, 223, 0.267);
+}
+.light-mode-section .skill-item .progress{
+    background-color: rgb(215, 219, 223);
+}
+.light-mode-section .skill-item .pg-percent{
+    color: #000000;
+}
 
 .light-icon{
     color: var(--dark-body-bg) !important;
@@ -123,7 +127,7 @@ body{
     top: 0;
     left: 0;
     bottom: 0;
-    min-height: 380px;
+    min-height: 500px;
     width: var(--side-width);
     font-family:'Montserrat', sans-serif;
     font-weight: 400;
@@ -192,7 +196,7 @@ section{
     min-width: 360px;
 }
 .section{
-    
+    transition: all 1s;
     min-height: 690px;
     position: relative;
 }
@@ -305,47 +309,50 @@ section{
 }
 /* Skills ---- */
 .skill-container{
-    /* position: relative;
-    top: 150px; */
-    margin-top: 150px;
+    margin: 125px auto 0 ;
     display: grid;
-    grid-template-columns: auto auto;
+    max-width: 1000px;
+    row-gap: 25px;
+    column-gap: 25px;
+    width: 90%;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    font-family: "Montserrat", sans-serif;
 }
 .skill-item{
-    background-color: rgb(81, 81, 92);
-    margin: 10px;
-    height: 60px;
+    background-color: rgb(69, 69, 80);
+    /* margin: 0px 20px; */
+    padding: 15px 25px;
+    color: #fff;
+}
+.skill-item p{
+    margin:0 0 20px 0;
 }
 .skill-item .progress{
     height: 7px;
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
     border-radius: 70px;
-    background-color: #fff;
+    background-color: rgb(83, 86, 100);
     position: relative;
-    /* overflow: hidden; */
 }
 .skill-item .progressbar{
     position: absolute;
-    z-index: 1;
     border-radius: 70px;
-    /* width: 70%; */
+   
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: red;
+    background-color: var(--btn-hover);
 }
-.skill-item .progressbar::before{
-    /* content: "";
+.skill-item .pg-percent{
+    color: #fff;
+    font-size: 12px;
     position: absolute;
-    z-index: 1;
     height: 13px;
-    top: -50%;
+    top: -16px;
     right: 0;
     border-radius: 50%;
-    background-color: rgb(255, 0, 0);
     width: 13px;
-    transform: translate(50%); */
+    transform: translate(50%);
 
 }
 /* ----------- */
@@ -377,12 +384,21 @@ section{
 #contact{
     min-height: 650px;
 }
+#contact p{
+    color:#fff;
+    font-family:"montserrat" ,sans-serif;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+}
 .contact-inputs textarea{
     height: 150px;
     resize: none;
 }
 .contact-inputs input:focus,.contact-inputs textarea:focus{
-    border:  3px solid var(--btn-hover);
+    box-shadow:inset 0 0 0 1.5px var(--btn-hover);
+   
 }
 .contact-inputs button{
     height: 50px;
@@ -397,19 +413,23 @@ section{
 
 }
 footer{
-    background-color: rgb(78, 75, 88);
-    
-    text-align: center;
+    background-color: rgb(78, 75, 88); 
     color: #fff;
     font-family: "montserrat",sans-serif;
-    line-height: 60px;
-    height: 60px;
+    height: 70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 @media only screen and (max-width: 900px){
     .contact-inputs{
         width: 85%;
     }
+    /* .skill-container{
+        display: block;
+    } */
 }
+
 @media only screen and (max-width: 700px) {
     .fa-times{
         display: block !important;
@@ -418,9 +438,7 @@ footer{
         width: 200px;
         height: 200px;
     }
-    .skill-container{
-        display: block;
-    }
+   
     /* .sidebar::before{
         content: "";
         position: fixed;
