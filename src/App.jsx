@@ -28,6 +28,7 @@ const App = () =>{
                 <Project/>
                 <Contact mode={mode}/>
                 <Footer/>
+               
            </section>
            
         </>

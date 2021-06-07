@@ -12,10 +12,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+}
+html{
     scroll-behavior: smooth;
+
 }
 body{
-    transition:  1s;
     overflow-x: hidden;
 }
 .navbar{
@@ -69,6 +71,7 @@ body{
 }
 .light-mode-section .home-info{
     color: var(--dark-sidebar-bg);
+    /* color: #fff; */
 }
 .light-mode-section .social-icons > *{
     color: var(--dark-body-bg);
@@ -141,21 +144,28 @@ body{
     overflow: hidden;
 }
 .sidebar ul li{
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease;
     list-style: none;
     font-size: 15px;
     cursor: pointer;
+    height: 15px;
     width: max-content;
     letter-spacing: 2.5px;
     margin: 0.7em 0 0 1.5em;
+   
 }
 .sidebar a{
+    transition: 0.2s ease;
     text-decoration: none;
     color: var(--dark-side-text);
-    transition: none !important;
+
 }
 .sidebar ul a:hover,.dark-mode-btn:hover {
     color: #fff;
+}
+.sidebar ul a:hover{
+    font-size: 20px;
+    
 }
 .collapse{
     width: 0 !important;
@@ -196,7 +206,7 @@ section{
     min-width: 360px;
 }
 .section{
-    transition: all 1s;
+    /* transition: all 1s; */
     min-height: 690px;
     position: relative;
 }
@@ -232,13 +242,12 @@ section{
 .home{
     min-height: 800px;
     margin: -80px 0 0;
+    
 }
 .home-content{
-    
     font-family: "Montserrat",sans-serif;
     color: #fff;
     width: 100%;
-    
     position: absolute;
     left: 50%;
     top: 50%;
@@ -262,16 +271,17 @@ section{
     font-size: calc(1.3vw + 25px);
     font-weight: 600;
     margin: 10px 0 0px 0;
+    
 }
 .home-info{
     margin: 0px 0 20px 0;
     
 }
 .resume{
-    color: #fff !important;
+    color: #fff;
     background-color: rgb(87, 87, 99);
-    width: 170px;
-    padding: 10px 0;
+    text-decoration: none;
+    padding: 10px 30px;
     margin: auto;
     cursor: pointer;
     border-radius: 6px;
@@ -394,7 +404,10 @@ section{
 }
 .contact-inputs textarea{
     height: 150px;
-    resize: none;
+    min-height: 50px;
+    max-height: 200px;
+    padding: 10px ;
+    resize: vertical;
 }
 .contact-inputs input:focus,.contact-inputs textarea:focus{
     box-shadow:inset 0 0 0 1.5px var(--btn-hover);
@@ -420,14 +433,12 @@ footer{
     display:flex;
     align-items: center;
     justify-content: center;
+    
 }
 @media only screen and (max-width: 900px){
     .contact-inputs{
         width: 85%;
     }
-    /* .skill-container{
-        display: block;
-    } */
 }
 
 @media only screen and (max-width: 700px) {
@@ -438,14 +449,5 @@ footer{
         width: 200px;
         height: 200px;
     }
-   
-    /* .sidebar::before{
-        content: "";
-        position: fixed;
-        display: none;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(235, 232, 232, 0.418);
-    } */
 }
 
