@@ -11,31 +11,31 @@ function Skills() {
       progress: 55,
     },
     {
-      name: "HTML/CSS/Bootstrap",
+      name: "HTML / CSS / Bootstrap",
       progress: 75,
     },
     {
-      name: "NodeJS/ExpressJS ",
+      name: "NodeJS / ExpressJS ",
       progress: 50,
     },
     {
-      name: "AWS/Heroku/Netlify",
+      name: "Heroku / Netlify / AWS",
       progress: 30,
     },
     {
-      name: "Python/Java",
+      name: "Python / Java",
       progress: 30,
     },
     {
-      name: "MongoDB/MySQL",
+      name: "MongoDB / MySQL",
       progress: 40,
     },
     {
-      name: "Git/ChromeDevTools",
+      name: "Git / ChromeDevTools",
       progress: 60,
     },
     {
-      name: "DS/Algorithms",
+      name: "DS & Algorithms",
       progress: 45,
     },
     {
@@ -43,7 +43,7 @@ function Skills() {
       progress: 40,
     },
     {
-      name: "Photoshop/Illustrator",
+      name: "Photoshop / Illustrator / Figma",
       progress: 40,
     },
     

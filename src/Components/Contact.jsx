@@ -1,5 +1,23 @@
 import {useState} from 'react';
 
+import styled from "styled-components"
+
+const Address = styled.a`
+    display: block;
+    font-family: "koho",sans-serif;
+    color: #c9ccdb;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+
+`
+const ContactDiv = styled.div`
+    /* width: 75vmin ; */
+    
+    /* position: relative; */
+    padding: 10px;
+    /* top: 520px; */
+`
 
 function Contact(props){
     
@@ -71,12 +89,22 @@ function Contact(props){
                     ></textarea>
                     <button onClick={sendMessage} className="send-btn">Send Message</button>
                     
+                <ContactDiv className="address">
+
+                    <Address href="mailto:subhamdas461@gmail.com">
+                        <i className="fas fa-envelope"></i>
+                        &nbsp; subhamdas461@gmail.com
+                    </Address>
+                    <Address href="tel:8787305963">
+                        <i className="fas fa-phone-alt"></i>
+                        &nbsp; +91 8787305963
+                    </Address>
+                    <Address href="http://maps.google.com/?q=Tezu,Arunachal Pradesh,792001">
+                        <i className="fas fa-map-marker-alt"></i>
+                        &nbsp; Tezu, IN, 792001
+                    </Address>
+                </ContactDiv>
                 </div>
-                {/* <p style={{
-                    marginTop:"420px",
-                    color: props.mode==="light"?"black":""
-                }}>Or send me an email at <span>subhamdas461@gmail.com</span></p>
-                 */}
         </div>
     )
 }

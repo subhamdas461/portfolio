@@ -90,6 +90,12 @@ body{
 .light-mode-section .skill-item .pg-percent{
     color: #000000;
 }
+.light-mode-section .contact .address{
+    background-color: rgb(227, 229, 233);
+}
+.light-mode-section .contact .address a{
+    color: var(--dark-body-bg);
+}
 
 .light-icon{
     color: var(--dark-body-bg) !important;
@@ -391,8 +397,14 @@ section{
     border-radius: 5px;
     background-color: var(--dark-sidebar-bg);
 }
+.contact-inputs .address{
+    margin-top: 30px;
+    background-color: rgb(46, 45, 49);
+    height: max-content;
+   
+}
 #contact{
-    min-height: 650px;
+    min-height: 680px;
 }
 #contact p{
     color:#fff;
@@ -404,10 +416,9 @@ section{
 }
 .contact-inputs textarea{
     height: 150px;
-    min-height: 50px;
-    max-height: 200px;
+    
     padding: 10px ;
-    resize: vertical;
+    resize: none;
 }
 .contact-inputs input:focus,.contact-inputs textarea:focus{
     box-shadow:inset 0 0 0 1.5px var(--btn-hover);
