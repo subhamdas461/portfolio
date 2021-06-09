@@ -1,8 +1,21 @@
+import { waitFor } from "@testing-library/dom";
+import { motion } from "framer-motion";
+
 function Home() {
   return (
     <div id="home" className="home section">
       <div className="home-content">
-        <div className="profile-img"></div>
+        <motion.div
+          initial={{opacity:0, x : -200}}
+          animate={{opacity:1,x: 0}}
+          transition={
+           {
+             type:"spring",
+             duration:1
+           }
+          }
+          className="profile-img"
+        ></motion.div>
         <p className="home-name">Hi, I'm Subham Das</p>
         <p className="home-info">CS Student, Web Developer.</p>
         <a

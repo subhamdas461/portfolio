@@ -39,7 +39,7 @@ function Skills() {
       progress: 45,
     },
     {
-      name: "C/C++",
+      name: "C / C++",
       progress: 40,
     },
     {
