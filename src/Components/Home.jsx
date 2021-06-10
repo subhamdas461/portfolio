@@ -1,4 +1,4 @@
-import { waitFor } from "@testing-library/dom";
+
 import { motion } from "framer-motion";
 
 function Home() {

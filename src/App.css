@@ -325,7 +325,7 @@ section{
 }
 /* Skills ---- */
 .skill-container{
-    margin: 125px auto 0 ;
+    margin: 15px auto 0 ;
     display: grid;
     max-width: 1000px;
     row-gap: 25px;

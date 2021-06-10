@@ -1,4 +1,6 @@
 import SkillItem from "./SkillItem";
+import {BigPara} from "../../global.styles"
+
 
 function Skills() {
   const skillList = [
@@ -51,6 +53,9 @@ function Skills() {
   return (
     <div id="skills" className="skills section">
       <h1>Skills</h1>
+      <BigPara top="100">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, molestias laboriosam placeat necessitatibus obcaecati odit sed inventore iste provident reiciendis quam quasi, nam laudantium accusantium? Assumenda tempore veritatis ut maxime.
+      </BigPara>
       <div className="skill-container">
 
             {skillList.map((e,id) => <SkillItem name={e.name} key={id} progress={e.progress} />)}

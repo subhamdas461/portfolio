@@ -6,13 +6,19 @@ import Navbar from "./Components/Navbar"
 import Contact from "./Components/Contact"
 import Project from "./Components/Project"
 import Experience from "./Components/Experience"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Footer from "./Components/Footer"
 import Skills from "./Components/Skills/Skills"
 
 const App = () =>{
-    const [mode, setMode] = useState("dark");
+    const [mode, setMode] = useState(localStorage.mode ? localStorage.mode : "dark");
     
+    useEffect(() => {
+        localStorage.setItem("mode",mode);
+        localStorage.mode === "dark"? setMode("dark"): setMode("light")
+        
+    }, [mode])
+
     let light_section = mode === "dark" ? "": "light-mode-section"
     return(
         <>
