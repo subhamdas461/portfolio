@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#3d3b42" />
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&family=Montserrat:wght@100;400;600;700;900&display=swap" rel="stylesheet"> 
     <meta
       name="description"
       content="Personal Portfolio by Subham Das"
@@ -21,10 +21,63 @@
     <link rel="manifest" href="manifest.json" />
    
     <title>Portfolio | Subham Das</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-loader{
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          z-index: 100;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s ease-in-out;
+          
+      }
+      .hide-loader{
+        width: 50vw;
+        
+        opacity: 0;
+      }
+      .load-spinner{
+          width: calc(3vw + 50px);
+          height: calc(3vw + 50px);
+          border: 6px solid gray;
+          border-radius: 50%;
+          animation: animateLoad 1.5s infinite ease-in-out;
+          
+      }
+      @keyframes animateLoad {
+        0%{
+          width: calc(3vw + 50px);
+          height: calc(3vw + 50px);
+        }
+        50%{
+          width: calc(3vw );
+          height: calc(3vw );
+      
+         
+        }
+        100%{
+          
+          width: calc(3vw + 50px);
+          height: calc(3vw + 50px);
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="main-loader">
+      <div class="load-spinner"></div>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
     <script   >
         if("serviceWorker" in navigator){
             window.addEventListener("load",()=>{

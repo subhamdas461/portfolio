@@ -12,11 +12,8 @@ const Address = styled.a`
 
 `
 const ContactDiv = styled.div`
-    /* width: 75vmin ; */
-    
-    /* position: relative; */
+    color: red;
     padding: 10px;
-    /* top: 520px; */
 `
 
 function Contact(props){
@@ -38,14 +35,23 @@ function Contact(props){
             setMessage(value)
         }
     }
-    const sendMessage =(e)=>{
+    const sendMessage = (e)=>{
         e.preventDefault();
         const msgObject = {
             name,
             email,
             message
         }
-        console.log(msgObject)
+        fetch("http://localhost:5000/message",{
+            method:"POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(msgObject)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+        .catch(err=>console.log("Error",err))
     }
 
     return(

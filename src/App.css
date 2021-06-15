@@ -24,7 +24,7 @@ body{
     height: 60px;
     background-color: var(--dark-sidebar-bg);
     position: sticky;
-    z-index: 1;
+    z-index: 5;
     top: 0;
     right: 0;
     display: flex;
@@ -136,14 +136,14 @@ body{
     top: 0;
     left: 0;
     bottom: 0;
-    min-height: 500px;
+    min-height: 380px;
     width: var(--side-width);
     font-family:'Montserrat', sans-serif;
     font-weight: 400;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 2;
+    z-index: 10;
     user-select: none;
     box-shadow: -2.5px 0 10px 0 rgba(0, 0, 0, 0.404) ;
     transition: 0.2s ease-in-out;
@@ -213,7 +213,7 @@ section{
 }
 .section{
     /* transition: all 1s; */
-    min-height: 690px;
+    min-height: 600px;
     position: relative;
 }
 .active-main{
@@ -221,16 +221,15 @@ section{
     left: 0 !important;
 }
 .section h1{
-    color: rgb(255, 255, 255);
+    color: #fff;
     margin: auto;
     position: relative;
     top: 70px;
-    font-size: 20px;
+    /* font-size: 25px; */
     letter-spacing: 2px;
     text-transform: uppercase;
-    /* left: 50%; */
-    /* transform: translate(-50%); */
-    font-family: "Montserrat",sans-serif;
+    font: 900 24px "Montserrat",sans-serif;
+    /* font-family: "Montserrat",sans-serif; */
     width: max-content;
 }
 .section h1::before{
@@ -246,7 +245,7 @@ section{
     background-color: rgb(177, 177, 177);
 }
 .home{
-    min-height: 800px;
+    min-height: 750px;
     margin: -80px 0 0;
     
 }
@@ -274,8 +273,8 @@ section{
     border: 7px solid rgb(255, 255, 255);
 }
 .home-name{
-    font-size: calc(1.3vw + 25px);
-    font-weight: 600;
+    font-size: calc(1.5vw + 25px);
+    font-weight: 900;
     margin: 10px 0 0px 0;
     
 }
@@ -325,11 +324,11 @@ section{
 }
 /* Skills ---- */
 .skill-container{
-    margin: 15px auto 0 ;
+    margin: 25px auto 0 ;
     display: grid;
     max-width: 1000px;
-    row-gap: 25px;
-    column-gap: 25px;
+    row-gap: 20px;
+    column-gap: 20px;
     width: 90%;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     font-family: "Montserrat", sans-serif;
@@ -380,12 +379,11 @@ section{
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    top: 180px;
+    top: 160px;
     left: 50%;
     transform: translate(-50%);
 }
 .contact-inputs > *{
-  
     margin: 10px 0;
     font-size: 16px;
     height: 40px;
@@ -398,19 +396,19 @@ section{
     background-color: var(--dark-sidebar-bg);
 }
 .contact-inputs .address{
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: rgb(46, 45, 49);
     height: max-content;
-   
 }
 #contact{
-    min-height: 680px;
+    min-height: 670px
+    
 }
 #contact p{
     color:#fff;
     font-family:"montserrat" ,sans-serif;
     position: absolute;
-    top: 150px;
+    top: 135px;
     left: 50%;
     transform: translate(-50%);
 }
