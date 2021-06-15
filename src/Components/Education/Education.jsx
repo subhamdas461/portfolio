@@ -1,19 +1,13 @@
 import EduList from "./EduList"
-import styled from "styled-components";
+import {MainDiv} from "../../global.styles"
 
-const MainDiv = styled.div`
-    margin-top: 120px;
-    display: flex;
-    
-    flex-direction: column;
-  
-`
-function Education(){
+
+function Education(props){
     return(
         <div id="education" className="education section">
             <h1>Education</h1>
            <MainDiv>
-              <EduList/>
+              <EduList mode={props.mode}/>
            </MainDiv>
         </div>
     )

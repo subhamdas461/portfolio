@@ -5,7 +5,7 @@ import Education from "./Components/Education/Education";
 import Navbar from "./Components/Navbar";
 import Contact from "./Components/Contact";
 import Project from "./Components/Project";
-import Experience from "./Components/Experience";
+import Experience from "./Components/Experience/Experience";
 import { useState, useEffect } from "react";
 import Footer from "./Components/Footer";
 import Skills from "./Components/Skills/Skills";
@@ -25,17 +25,17 @@ const App = () => {
     let loadTimeOne = setTimeout(()=>{
         setLoading(false)
         loadEle.classList.add("hide-loader")
-        console.log("loadanim",loading);
+       
         setTimeout(()=>{
-          console.log("remove load",loading);
-           loadEle.remove()
+         
+           loadEle.remove();
         },1000)
     },1000)
     
     return ()=>{
         clearTimeout(loadTimeOne)
     }
-  }, []);
+  }, [loading]);
 
   let light_section = mode === "dark" ? "" : "light-mode-section";
   return (
@@ -50,9 +50,9 @@ const App = () => {
         <Navbar mode={mode} />
         <Home />
         <About />
-        <Education />
+        <Education mode={mode}/>
         <Skills />
-        <Experience />
+        <Experience  mode={mode} />
         <Project />
         <Contact mode={mode} />
         <Footer />
