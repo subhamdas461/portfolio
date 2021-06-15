@@ -33,10 +33,10 @@
           height: 100vh;
           z-index: 100;
           background-color: #fff;
+          transition: 0.3s ease-in-out;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: 0.3s ease-in-out;
           
       }
       .hide-loader{
@@ -45,11 +45,11 @@
         opacity: 0;
       }
       .load-spinner{
+          animation: animateLoad .7s infinite ease-in-out;
           width: calc(3vw + 50px);
           height: calc(3vw + 50px);
           border: 6px solid gray;
           border-radius: 50%;
-          animation: animateLoad 1.5s infinite ease-in-out;
           
       }
       @keyframes animateLoad {
@@ -57,17 +57,15 @@
           width: calc(3vw + 50px);
           height: calc(3vw + 50px);
         }
-        50%{
+        100%{
           width: calc(3vw );
           height: calc(3vw );
-      
-         
         }
-        100%{
+        /* 100%{
           
           width: calc(3vw + 50px);
           height: calc(3vw + 50px);
-        }
+        } */
       }
     </style>
   </head>

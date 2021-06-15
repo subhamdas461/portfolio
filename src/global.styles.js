@@ -9,13 +9,14 @@ const globalValues = {
 }
 
 export const BigPara = styled.p`
+  
     color: #fff;
     line-height: ${props=> props.lineHeight};
     font-size: ${props=>props.fsize};
     font-family: "${globalValues.fontFam}",sans-serif;
     margin:${props=>props.margin};
     width: ${props=> props.width};
-    /* min-width: 300px; */
+    text-align: ${props=>props.textAlign};
     max-width: 1000px;
     flex: ${props => props.flex};
     margin-top: ${prop => prop.top};
@@ -45,7 +46,17 @@ export const FlexContainer = styled.div`
     flex-wrap: wrap;
     max-width: 1000px; 
 `
-
+export const SimpleFlex = styled.div`
+  display: flex;
+  justify-content: ${props=> props.jusCont};
+  align-items: ${props=> props.alItem};
+  @media only screen and (max-width: 525px) {
+    display: block;
+    text-align: left;
+    
+  }
+  /* flex-wrap: wrap; */
+`
 export const BoldHead = styled.h2`
   font: 700 ${(props) => props.fsize} "montserrat", sans-serif;
   color: ${props=>props.mode==="dark"? "#fff": "var(--dark-sidebar-bg)"};
@@ -84,3 +95,15 @@ export const EduDetail = styled.div`
     background-color: var(--btn-hover);
   }
 `;
+
+export const ImageLogo = styled.img`
+  
+  width: 35px;
+  height: 35px;
+  /* background-color: #fff; */
+  margin: 0 10px 0 0;
+  padding: 0px;
+  border-radius:5px;
+  object-fit: cover;
+ 
+`

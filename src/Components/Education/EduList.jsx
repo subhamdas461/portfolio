@@ -11,7 +11,7 @@ const EduData = [
     gpa: "GPA : 8.91",
   },
   {
-    school: "GHSS, Tezu",
+    school: "Govt. Higher Secondary School, Tezu",
     course: "12th (Higher Secondary)",
     year: "2017 - 2018",
     gpa: "Percentage : 76%",
@@ -40,7 +40,7 @@ const EduList = (props) => {
         )}
         <EduDetail mode={props.mode}>
           <BoldHead mode={props.mode} fsize="20px">{e.course}</BoldHead>
-          <BigPara fsize="12px">({e.year})</BigPara>
+          <BigPara fsize="12px">( {e.year} )</BigPara>
           <BigPara margin="15px 0">{e.school}</BigPara>
           <BigPara fsize="12px">{e.gpa}</BigPara>
         </EduDetail>
