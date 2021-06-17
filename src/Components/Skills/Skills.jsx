@@ -34,7 +34,7 @@ function Skills() {
     },
     {
       name: "Git / ChromeDevTools",
-      progress: 55,
+      progress: 50,
     },
     {
       name: "DS & Algorithms",
@@ -51,7 +51,7 @@ function Skills() {
     
   ];
   const paraText = `
-      Some tools and techs I am familar with & use them. Learning and using these to get my objectives done.
+      Some familar tools and tech that I use. Learning and using these to get my objectives done.
   `
   return (
     <div id="skills" className="skills section">

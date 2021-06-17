@@ -6,68 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#3d3b42" />
     
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&family=Montserrat:wght@100;400;600;700;900&display=swap" rel="stylesheet"> 
     <meta
       name="description"
       content="Personal Portfolio by Subham Das"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
     <link rel="apple-touch-icon" href="./images/logo.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+  
     <link rel="manifest" href="manifest.json" />
    
     <title>Portfolio | Subham Das</title>
-    <style>
-      *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .main-loader{
-          position: fixed;
-          width: 100vw;
-          height: 100vh;
-          z-index: 100;
-          background-color: #fff;
-          transition: 0.3s ease-in-out;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          
-      }
-      .hide-loader{
-        width: 50vw;
-        
-        opacity: 0;
-      }
-      .load-spinner{
-          animation: animateLoad .7s infinite ease-in-out;
-          width: calc(3vw + 50px);
-          height: calc(3vw + 50px);
-          border: 6px solid gray;
-          border-radius: 50%;
-          
-      }
-      @keyframes animateLoad {
-        0%{
-          width: calc(3vw + 50px);
-          height: calc(3vw + 50px);
-        }
-        100%{
-          width: calc(3vw );
-          height: calc(3vw );
-        }
-        /* 100%{
-          
-          width: calc(3vw + 50px);
-          height: calc(3vw + 50px);
-        } */
-      }
-    </style>
+   
   </head>
   <body>
     <div class="main-loader">

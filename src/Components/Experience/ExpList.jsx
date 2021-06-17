@@ -8,45 +8,51 @@ import {
   EduDetail,
   ImageLogo
 } from "../../global.styles";
-import { FaBriefcase, FaUserTie, FaSchool, FaCode } from "react-icons/fa";
+import { FaBriefcase, FaCode, FaHandshake } from "react-icons/fa";
+import {  MdGroup } from "react-icons/md";
 import styled from "styled-components";
 import JCLogo from "../../images/jeeCarnotLogo.png"
 import GdgLogo from "../../images/gdgLogo.bmp"
 import ISLogo from "../../images/isLogo.bmp"
+import CrioLogo from "../../images/crioLogoDark.jpg"
 
 const ExpData = [
   {
-    tasks: "lorem lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt kjbkbk",
     org: "Crio.Do",
+    tasks: "Participated in Crio's Winter of Doing program(2021). ",
     year: "Feb 2021 - Mar 2021",
-    position: "Full-stack Development Externship",
-    logo: JCLogo
+    position: "Winter of Doing Participant",
+    logo: CrioLogo,
+    icon : <FaCode/>
   },
   {
-    tasks: "lorem lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt kjbkbk",
     org: "JEE Carnot",
+    tasks: "lorem lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt kjbkbk",
     year: "Dec 2020 - Jan 2021",
     position: "Front-End Intern",
-    logo: JCLogo
+    logo: JCLogo,
+    icon : <FaBriefcase/>
   },
   {
-    tasks: "lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt",
     org: "Google Developer Group, Kolkata",
+    tasks: "lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt",
     year: "Apr 2020 - present",
     position: "Member",
-    logo: GdgLogo
+    logo: GdgLogo,
+    icon : <MdGroup/>
   },
   {
-    tasks: "lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt",
     org: "Internshala",
+    tasks: "lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt",
     year: "Jun 2020 - Aug 2020",
     position: "Student Partner",
-    logo: ISLogo
+    logo: ISLogo,
+    icon : <FaHandshake/>
   },
 ];
 const Italics = styled.span`
   display: block;
-  color: #c5cbe6;
+  color:${pro=>pro.mode==="light"?"#5a5b81":"#b7d4ff"};
   padding: 5px 0;
   font:italic 400 16px "Montserrat",sans-serif;
 `
@@ -55,6 +61,10 @@ const ExpHead = styled(BoldHead)`
   flex: 0 0 minmax(200px,500px);
   display: flex;
   align-items: center;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
 `
 
 // const TimePeriod = styled(BigPara)`
@@ -73,9 +83,7 @@ const ExpList = (props) => {
     return (
       <ExpContainer key={key} margin={`0 auto 30px auto`}>
         <RoundIcon mode={props.mode}>
-          {key === 0 && <FaBriefcase />}
-          {key === 1 && <FaCode />}
-          {key === 2 && <FaSchool />}
+           {e.icon}
         </RoundIcon>
         {key === ExpData.length - 1 && (
           <RoundIcon mode={props.mode} pos="absolute" top="100%">
@@ -90,7 +98,7 @@ const ExpList = (props) => {
             </ExpHead>
             <BigPara flex="0 0 130px" textAlign="right" fsize="12px">{e.year}</BigPara>
           </SimpleFlex>
-          <Italics>{e.position}</Italics>
+          <Italics mode={props.mode}>{e.position}</Italics>
           <BigPara margin="15px 0">{e.tasks}</BigPara>
           
         </ExpDetailBox>

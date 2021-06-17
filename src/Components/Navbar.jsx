@@ -1,53 +1,57 @@
 import { useEffect } from "react";
+import { FaAlignRight } from "react-icons/fa";
 
-const handleToggle = (item)=>{
+const handleToggle = () => {
+  const sidebar = document.querySelector(".sidebar");
+  const main_content = document.querySelector(".main-content");
+
+  if (window.innerWidth > 699) {
+    sidebar.classList.toggle("collapse");
+    main_content.classList.toggle("active-main");
+  } else {
+    sidebar.classList.remove("collapse");
+  }
+};
+
+function Navbar(props) {
+  let light_navbar = props.mode === "dark" ? "" : "light-mode-navbar";
+  let light_icon = props.mode === "dark" ? "" : "light-icon";
+  useEffect(() => {
     const sidebar = document.querySelector(".sidebar");
-    const main_content = document.querySelector(".main-content")
-  
-    if(window.innerWidth>699){
-        sidebar.classList.toggle("collapse");
-        main_content.classList.toggle("active-main")    
+    const main_content = document.querySelector(".main-content");
+    if (window.innerWidth < 700) {
+      // main_content.classList.add("active-main")
+      sidebar.classList.add("collapse");
     }
-    else{   
-        sidebar.classList.remove("collapse")
-
-    }
-}
-
-function Navbar(props){
-    let light_navbar = props.mode === "dark" ? "": "light-mode-navbar"
-    let light_icon = props.mode === "dark" ? "": "light-icon"
-    useEffect(() => {
-        const sidebar = document.querySelector(".sidebar");
-        const main_content = document.querySelector(".main-content")
-        if(window.innerWidth<700){
-           
-            // main_content.classList.add("active-main")
-            sidebar.classList.add("collapse")
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 700) {
+        if (
+          !sidebar.classList.contains("collapse") &&
+          main_content.classList.contains("active-main")
+        ) {
+          return;
         }
-        window.addEventListener("resize",()=>{
-            if(window.innerWidth < 700){
-                if(! sidebar.classList.contains("collapse") && main_content.classList.contains("active-main")){
-                    return;
-                }
-                sidebar.classList.add("collapse")
-                main_content.classList.add("active-main")
-            }
-            else{
-                if(sidebar.classList.contains("collapse") && main_content.classList.contains("active-main")){
-                    return;
-                }
-                sidebar.classList.remove("collapse")
-                main_content.classList.remove("active-main")
-
-            }
-        })
-    }, []);
-    return(
-        <div className={`navbar ${light_navbar}`}>
-            <i className={`icon fas fa-bars ${light_icon}`} onClick={handleToggle}></i>
-            <h2 className="nav-logo"><a href="#home">PORTFOLIO</a></h2>
-        </div>
-    )
+        sidebar.classList.add("collapse");
+        main_content.classList.add("active-main");
+      } else {
+        if (
+          sidebar.classList.contains("collapse") &&
+          main_content.classList.contains("active-main")
+        ) {
+          return;
+        }
+        sidebar.classList.remove("collapse");
+        main_content.classList.remove("active-main");
+      }
+    });
+  }, []);
+  return (
+    <div className={`navbar ${light_navbar}`}>
+      <FaAlignRight className={`menu-bar ${light_icon}`} onClick={handleToggle} />
+      <h2 className="nav-logo">
+        <a href="#home">PORTFOLIO</a>
+      </h2>
+    </div>
+  );
 }
 export default Navbar;

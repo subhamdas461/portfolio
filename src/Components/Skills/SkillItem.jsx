@@ -1,14 +1,9 @@
 
-
 function SkillItem(props) {
  
  
   return (
-    <div 
-        className="skill-item"
-       
-        
-    >
+    <div className="skill-item">
       <p>{props.name}</p>
 
       <div className="progress">

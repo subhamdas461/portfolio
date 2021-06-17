@@ -1,12 +1,12 @@
+import { useRef } from "react";
+import { FaMoon, FaSun, FaTimes } from "react-icons/fa"
 
 function Sidebar(props){
-    const toogleModeIcon ={
-        dark : "fa-moon",
-        light : "fa-sun"
-    }
+    const sidebarRef = useRef()
     const handleQuit=(e)=>{
-        e.target.parentElement.classList.remove("side-active")
-        e.target.parentElement.classList.add("collapse")
+       
+        sidebarRef.current.classList.remove("side-active")
+        sidebarRef.current.classList.add("collapse")
     }
     let handleMode=()=>{
         props.mode === "dark"? props.changeTheme("light"): props.changeTheme("dark");
@@ -14,16 +14,15 @@ function Sidebar(props){
     }
     const hideSide=(e)=>{
         if(window.innerWidth<700)
-        document.querySelector(".sidebar").classList.add("collapse")
+        sidebarRef.current.classList.add("collapse")
     }
     let light_sidebar = props.mode === "dark" ? "": "light-mode-sidebar"
     let light_icon = props.mode === "dark" ? "": "light-icon"
     return(
-        <div className={`sidebar ${light_sidebar}`}>
-            <i className={`icon fas fa-times ${light_icon}`} onClick={handleQuit}></i>
-            
+        <div ref={sidebarRef} className={`sidebar ${light_sidebar}`}>
+           
+            <FaTimes className={`cross-icon ${light_icon}`} onClick={handleQuit}/>
             <ul >
-
                 <li><a onClick={hideSide} href="#home">HOME</a></li>
                 <li><a onClick={hideSide} href="#about">ABOUT</a></li>
                 <li><a onClick={hideSide} href="#education">EDUCATION</a></li>
@@ -34,7 +33,10 @@ function Sidebar(props){
             </ul>
             
             <div className="dark-mode-btn" onClick={handleMode}>
-                <i className={`fas ${props.mode === "dark"?toogleModeIcon.light:toogleModeIcon.dark}`}></i>
+                {props.mode==="dark"?
+                    <FaSun /> :
+                    <FaMoon/>
+                }
                 <p>{props.mode==="dark"? "Light": "Dark"}Mode</p>
             </div>
         </div>

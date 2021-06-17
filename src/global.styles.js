@@ -11,6 +11,7 @@ const globalValues = {
 export const BigPara = styled.p`
   
     color: #fff;
+    color:${props=>props.dark && "#fff !important"};
     line-height: ${props=> props.lineHeight};
     font-size: ${props=>props.fsize};
     font-family: "${globalValues.fontFam}",sans-serif;
@@ -27,15 +28,17 @@ export const MainDiv = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1000px;
+    width: 90%;
+    /* background-color: red; */
 `
 export const EduContainer = styled.div`
   text-align: center;
   color: #fff;
-  width: 90%;
+  width: 100%;
   display: flex;
   position: relative;
   margin: ${props=>props.margin};
-  /* max-width: 1000px; */
+ 
 `;
 export const FlexContainer = styled.div`
     display: flex;
@@ -55,7 +58,7 @@ export const SimpleFlex = styled.div`
     text-align: left;
     
   }
-  /* flex-wrap: wrap; */
+ 
 `
 export const BoldHead = styled.h2`
   font: 700 ${(props) => props.fsize} "montserrat", sans-serif;
@@ -100,10 +103,15 @@ export const ImageLogo = styled.img`
   
   width: 35px;
   height: 35px;
-  /* background-color: #fff; */
   margin: 0 10px 0 0;
   padding: 0px;
   border-radius:5px;
   object-fit: cover;
- 
+  background-color: var(--light-sidebar-bg);
+`
+export const SmallIcon = styled.span`
+  color: red;
+  margin: 0 5px;
+  display: inline-grid;
+  place-items:center;
 `
