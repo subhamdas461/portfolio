@@ -17,10 +17,10 @@
   color: #fff;
   background: var(--btn-hover);
 }
+
 html {
+  width: 100vw;
   scroll-behavior: smooth;
-}
-body {
   overflow-x: hidden;
 }
 .main-loader {
@@ -29,13 +29,12 @@ body {
   height: 100vh;
   z-index: 100;
   background-color: #fff;
-  transition: 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hide-loader {
-  width: 50vw;
+  transition: 0.5s;
   opacity: 0;
 }
 @keyframes animateLoad {
@@ -56,10 +55,13 @@ body {
 .navbar {
   height: 60px;
   background-color: var(--dark-sidebar-bg);
-  position: sticky;
+  position: fixed;
+  min-width: 300px;
   z-index: 5;
   top: 0;
   right: 0;
+  transition: 0.2s ease-in-out;
+  left: var(--side-width);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -226,18 +228,16 @@ section {
   background: var(--dark-body-bg);
   position: absolute;
   left: var(--side-width);
-  /* width: 100%; */
   transition: 0.2s ease-in-out;
   right: 0;
   min-width: 360px;
+  overflow-x: hidden;
 }
 .section {
-  /* transition: all 1s; */
-  min-height: 600px;
+  min-height: 500px;
   position: relative;
 }
 .active-main {
-  /* width: 100vw; */
   left: 0 !important;
 }
 .section h1 {
@@ -265,17 +265,19 @@ section {
 }
 .home {
   /* background: fixed center no-repeat; */
-  height: 100vh;
-  margin: -80px 0 0;
+  height: 750px;
+  /* margin: 0 0 50px 0; */
+  /* margin: -80px 0 0; */
 }
 .home-content {
   font-family: "Montserrat", sans-serif;
   color: #fff;
   width: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  /* background-color: red; */
+  height: calc(85%);
+  position: relative;
+  top: 60px;
+  padding: 100px 0 0 0;
   text-align: center;
 }
 .profile-img {
@@ -314,8 +316,8 @@ section {
   background-color: var(--btn-hover);
 }
 .social-icons {
-  position: relative;
-  bottom: -120px;
+  position: absolute;
+  bottom: 0;
   left: 50%;
   width: max-content;
   transform: translate(-50%);
@@ -388,15 +390,15 @@ section {
 }
 /* ----------- */
 .contact-inputs {
-  position: absolute;
+  /* position: absolute; */
   margin: auto;
-  width: 70vmin;
+  width: 90%;
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  top: 160px;
-  left: 50%;
-  transform: translate(-50%);
+  margin-top: 130px;
+  max-width: 700px;
+  /* transform: translate(-50%); */
 }
 .contact-inputs > * {
   margin: 10px 0;
@@ -458,13 +460,16 @@ footer {
 }
 @media only screen and (max-width: 900px) {
   .contact-inputs {
-    width: 85%;
+    /* width: 85%; */
   }
 }
 
 @media only screen and (max-width: 700px) {
   .cross-icon {
     display: block !important;
+  }
+  .navbar {
+    left: 0;
   }
   .profile-img {
     width: 200px;

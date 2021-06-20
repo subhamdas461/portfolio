@@ -1,8 +1,10 @@
+import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { animationTypes, useCustomInView } from "../obs.animation";
 
 import styled from "styled-components";
-
+import { useEffect } from "react";
 
 const Address = styled.a`
   display: flex;
@@ -11,8 +13,7 @@ const Address = styled.a`
   margin: 8px 0;
   text-decoration: none;
   font-size: 14px;
-  align-items: center; 
-
+  align-items: center;
 `;
 const ContactDiv = styled.div`
   padding: 10px;
@@ -55,6 +56,13 @@ function Contact(props) {
       .catch((err) => console.log("Error", err));
   };
 
+  const [inView, ref] = useCustomInView(0.3);
+  const animCon = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animCon.start(animationTypes.rightLeft);
+    }
+  }, [inView]);
   return (
     <div id="contact" className="contact section">
       <h1>Get in Touch</h1>
@@ -65,7 +73,13 @@ function Contact(props) {
       >
         Let's Connect!
       </p>
-      <div className="contact-inputs">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, x: -150 }}
+        animate={animCon}
+        transition={{ type: "spring", damping: 20, duration: 1 }}
+        className="contact-inputs"
+      >
         <input
           type="text"
           spellCheck="false"
@@ -101,19 +115,19 @@ function Contact(props) {
 
         <ContactDiv className="address">
           <Address href="mailto:subhamdas461@gmail.com">
-            <FaEnvelope/>
-            <span > &nbsp; subhamdas461@gmail.com</span>
+            <FaEnvelope />
+            <span> &nbsp; subhamdas461@gmail.com</span>
           </Address>
-          <Address href="tel:8787305963">
+          {/* <Address href="tel:8787305963">
             <FaPhoneAlt />
             <span>&nbsp; +91 8787305963</span>
-          </Address>
+          </Address> */}
           <Address href="http://maps.google.com/?q=Tezu,Arunachal Pradesh,792001">
             <FaMapMarkerAlt />
             <span>&nbsp; Tezu, IN, 792001</span>
           </Address>
         </ContactDiv>
-      </div>
+      </motion.div>
     </div>
   );
 }

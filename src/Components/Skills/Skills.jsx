@@ -1,6 +1,5 @@
 import SkillItem from "./SkillItem";
-import {BigPara} from "../../global.styles"
-
+import { BigPara } from "../../global.styles";
 
 function Skills() {
   const skillList = [
@@ -48,20 +47,20 @@ function Skills() {
       name: "Photoshop / Illustrator / Figma",
       progress: 40,
     },
-    
   ];
   const paraText = `
       Some familar tools and tech that I use. Learning and using these to get my objectives done.
-  `
+  `;
   return (
     <div id="skills" className="skills section">
       <h1>Skills</h1>
       <BigPara top="120px" margin="auto" width="90%">
-         {paraText}
+        {paraText}
       </BigPara>
       <div className="skill-container">
-
-            {skillList.map((e,id) => <SkillItem name={e.name} key={id} progress={e.progress} />)}
+        {skillList.map((e, id) => (
+          <SkillItem name={e.name} key={id} progress={e.progress} />
+        ))}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   FaFacebookF,
   FaGithub,
@@ -6,44 +7,66 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import { useEffect } from "react";
 
 function Home() {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const animationImage = useAnimation();
+  const animationName = useAnimation();
+  const animationPara = useAnimation();
+  const animationResume = useAnimation();
+  const animationIcons = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animationImage.start({ opacity: 1, y: 0 });
+      animationName.start({ opacity: 1, x: 0 });
+      animationPara.start({ opacity: 1, y: 0 });
+      animationResume.start({ opacity: 1 });
+      animationIcons.start("show");
+    }
+    if (!inView) {
+    }
+  }, [inView]);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        
-        delayChildren:1.8,
+        delayChildren: 1.8,
         staggerChildren: 0.2,
       },
     },
   };
 
   const item = {
-    hidden: { opacity: 0, y:50,rotateZ:180 },
-    show: { opacity: 1, y:0,rotateZ:0 ,transition: { duration: 0.5 }}
+    hidden: { opacity: 0, y: 50, rotateZ: 180 },
+    show: { opacity: 1, y: 0, rotateZ: 0, transition: { duration: 0.5 } },
   };
   return (
-    <div id="home" className="home section">
+    <div ref={ref} id="home" className="home section">
       <div className="home-content">
         <motion.div
-          initial={{ opacity:0, y: -60 }}
-          animate={{ opacity:1, y: 0 }}
+          initial={{ opacity: 0, y: -80 }}
+          animate={animationImage}
           transition={{
             delay: 0.4,
             type: "spring",
             bounce: 0,
-            stiffness:100,
-            duration: 1.6,
+            stiffness: 20,
+            duration: 1.8,
           }}
           className="profile-img"
         ></motion.div>
         <motion.p
           initial={{ opacity: 0, x: 70 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={animationName}
           transition={{
-            delay: 0.7,
+            delay: 1,
             type: "tween",
             duration: 0.8,
           }}
@@ -53,7 +76,7 @@ function Home() {
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animationPara}
           transition={{
             delay: 1.4,
             type: "tween",
@@ -65,7 +88,7 @@ function Home() {
         </motion.p>
         <motion.a
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={animationResume}
           transition={{
             delay: 1.9,
             type: "tween",
@@ -80,11 +103,10 @@ function Home() {
         </motion.a>
 
         <motion.div
-         
           className="social-icons"
           variants={container}
           initial="hidden"
-          animate="show"
+          animate={animationIcons}
         >
           <motion.a
             variants={item}

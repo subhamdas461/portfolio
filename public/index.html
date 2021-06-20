@@ -5,20 +5,19 @@
     <link rel="icon" type="image/png" href="./images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#3d3b42" />
-    
-    <link rel="preload" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&family=Montserrat:wght@100;400;600;700;900&display=swap" rel="stylesheet"> 
-    <meta
-      name="description"
-      content="Personal Portfolio by Subham Das"
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&family=Montserrat:wght@100;400;600;700;900&display=swap"
+      rel="stylesheet"
     />
-    
+    <meta name="description" content="Personal Portfolio by Subham Das" />
+
     <link rel="apple-touch-icon" href="./images/logo.png" />
-  
+
     <link rel="manifest" href="manifest.json" />
-   
+
     <title>Portfolio | Subham Das</title>
-   
   </head>
   <body>
     <div class="main-loader">
@@ -26,15 +25,7 @@
     </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
     
-    <script   >
-        if("serviceWorker" in navigator){
-            window.addEventListener("load",()=>{
-                navigator.serviceWorker.register("./serviceworker.js")
-                .then((reg)=> console.log("Success:",reg))
-                .catch(err=>console.log("Error:",err))
-            })
-        }
-    </script>
   </body>
 </html>
