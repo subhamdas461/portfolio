@@ -8,23 +8,23 @@ function Skills() {
       progress: 70,
     },
     {
-      name: "ReactJS",
-      progress: 55,
+      name: "React",
+      progress: 50,
     },
     {
       name: "HTML / CSS / Bootstrap",
-      progress: 75,
+      progress: 65,
     },
     {
-      name: "NodeJS / ExpressJS ",
-      progress: 50,
+      name: "Node.js / Express.js ",
+      progress: 40,
     },
     {
       name: "Heroku / Netlify / AWS",
       progress: 30,
     },
     {
-      name: "Python / Java",
+      name: "Python",
       progress: 30,
     },
     {
@@ -32,20 +32,16 @@ function Skills() {
       progress: 40,
     },
     {
-      name: "Git / ChromeDevTools",
-      progress: 50,
+      name: "Git / ChromeDevTools / Docker",
+      progress: 40,
     },
     {
       name: "DS & Algorithms",
       progress: 45,
     },
     {
-      name: "C / C++",
-      progress: 40,
-    },
-    {
       name: "Photoshop / Illustrator / Figma",
-      progress: 40,
+      progress: 30,
     },
   ];
   const paraText = `

@@ -13,6 +13,9 @@ const Image = styled(motion.img)`
   border-radius: 5px;
   background-color: var(--dark-sidebar-bg);
 `;
+const about = {
+  one: "I'm currently a final year Computer Science and Engineering student at NIT Arunachal Pradesh. Passionate about web development and front-end design. I enjoy developing and designing products for the web.",
+};
 
 function About() {
   const [inViewPara, para] = useCustomInView();
@@ -27,7 +30,7 @@ function About() {
     if (inViewImg) {
       animationImg.start(animationTypes.rightLeft);
     }
-  }, [inViewImg, inViewPara]);
+  }, [inViewImg, inViewPara, animationPara, animationImg]);
 
   return (
     <div id="about" className="about section">
@@ -36,22 +39,18 @@ function About() {
         <BigPara
           initial={{ opacity: 0, x: -100 }}
           animate={animationPara}
-          transition={{ ease: "backOut", duration: 0.8 }}
+          transition={{ ease: "backOut", duration: 1 }}
           ref={para}
           margin="10px"
           flex="1 1 250px"
-          lineHeight="25px"
+          lineHeight="24px"
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
-          dolorum ex consequuntur animi eaque dignissimos, cupiditate quod
-          repellat necessitatibus ab unde illum asperiores corporis placeat
-          praesentium quam, voluptatum ipsum eligendi eum incidunt omnis quod
-          doloremque repellat voluptas similique distinctio asperiores? Placeat.
+          {about.one}
         </BigPara>
         <Image
           initial={{ opacity: 0, x: 100 }}
           animate={animationImg}
-          transition={{ ease: "backOut", duration: 0.8, delay: 0.3 }}
+          transition={{ ease: "backOut", duration: 1, delay: 0.3 }}
           ref={img}
           src={ImageSrc}
           flex="1 1 250px"

@@ -1,14 +1,20 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  FaFacebookF,
   FaGithub,
   FaHackerrank,
   FaInstagram,
   FaLinkedin,
+  FaMapMarkerAlt,
+  FaTwitter,
 } from "react-icons/fa";
 import { useEffect } from "react";
-
+import { BigPara } from "../global.styles";
+const homeData = {
+  name: "Hi, I'm Subham Das",
+  desc: "Student, Web Developer",
+  location: " Arunachal Pradesh, India",
+};
 function Home() {
   const { ref, inView } = useInView({
     threshold: 0.4,
@@ -30,7 +36,14 @@ function Home() {
     }
     if (!inView) {
     }
-  }, [inView]);
+  }, [
+    inView,
+    animationImage,
+    animationName,
+    animationResume,
+    animationPara,
+    animationIcons,
+  ]);
 
   const container = {
     hidden: { opacity: 0 },
@@ -54,11 +67,10 @@ function Home() {
           initial={{ opacity: 0, y: -80 }}
           animate={animationImage}
           transition={{
-            delay: 0.4,
-            type: "spring",
-            bounce: 0,
-            stiffness: 20,
-            duration: 1.8,
+            delay: 0.2,
+
+            ease: "circOut",
+            duration: 2,
           }}
           className="profile-img"
         ></motion.div>
@@ -72,7 +84,7 @@ function Home() {
           }}
           className="home-name"
         >
-          Hi, I'm Subham Das
+          {homeData.name}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -84,8 +96,22 @@ function Home() {
           }}
           className="home-info"
         >
-          CS Student, Web Developer
+          {homeData.desc}
         </motion.p>
+        <BigPara
+          fsize="14px"
+          initial={{ opacity: 0, y: 20 }}
+          animate={animationPara}
+          transition={{
+            delay: 1.6,
+            type: "tween",
+            duration: 0.5,
+          }}
+          className="home-info"
+        >
+          <FaMapMarkerAlt />
+          {homeData.location}
+        </BigPara>
         <motion.a
           initial={{ opacity: 0 }}
           animate={animationResume}
@@ -128,11 +154,11 @@ function Home() {
 
           <motion.a
             variants={item}
-            href="https://www.facebook.com/subham.das.148553/"
+            href="https://twitter.com/subham_das1999"
             rel="noreferrer"
             target="_blank"
           >
-            <FaFacebookF />
+            <FaTwitter />
           </motion.a>
           <motion.a
             variants={item}

@@ -1,10 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
-import { useState } from "react";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { PulseLoader } from "react-spinners";
 import { animationTypes, useCustomInView } from "../obs.animation";
 
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useRef } from "react";
 
 const Address = styled.a`
   display: flex;
@@ -23,7 +24,29 @@ function Contact(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sendLoad, setSendLoad] = useState(false);
+  const sendButton = useRef();
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const msgRef = useRef();
 
+  const msgObject = {
+    name: checkExtraWhiteSpce(name),
+    email: checkExtraWhiteSpce(email),
+    message: checkExtraWhiteSpce(message),
+  };
+  const checkError = (input) => {
+    /^\s*$/.test(input.value)
+      ? input.classList.add("error-input")
+      : input.classList.remove("error-input");
+
+    if (input.name === "email") {
+      //eslint-disable-next-line
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value)
+        ? input.classList.remove("error-input")
+        : input.classList.add("error-input");
+    }
+  };
   const handleValue = (e) => {
     const { name, value } = e.target;
 
@@ -31,29 +54,66 @@ function Contact(props) {
       setName(value);
     }
     if (name === "email") {
-      setEmail(value);
+      setEmail(checkExtraWhiteSpce(value));
     }
     if (name === "message") {
       setMessage(value);
     }
+
+    checkError(e.target);
   };
+  function checkExtraWhiteSpce(sentence) {
+    return sentence.replace(/\s+/g, " ").trim();
+  }
+
   const sendMessage = (e) => {
     e.preventDefault();
-    const msgObject = {
-      name,
-      email,
-      message,
-    };
-    fetch("http://localhost:5000/message", {
+    setSendLoad(true);
+    sendButton.current.style.cursor = "not-allowed";
+    sendButton.current.disabled = "true";
+
+    checkError(nameRef.current);
+    checkError(emailRef.current);
+    checkError(msgRef.current);
+
+    if (/^\s*$/.test(name) || /^\s*$/.test(email) || /^\s*$/.test(message)) {
+      setSendLoad(false);
+      sendButton.current.style.cursor = "pointer";
+      sendButton.current.disabled = false;
+      return;
+    }
+    //eslint-disable-next-line
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      console.log("invalid email");
+      setSendLoad(false);
+      sendButton.current.style.cursor = "pointer";
+      sendButton.current.disabled = false;
+      return;
+    }
+
+    fetch("https://portfolio-jordanhaste.herokuapp.com/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(msgObject),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log("Error", err));
+      .then((res) => {
+        res.json();
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .then((data) => {
+        setSendLoad(false);
+        sendButton.current.style.cursor = "pointer";
+        sendButton.current.disabled = false;
+      })
+      .catch((err) => {
+        setSendLoad(false);
+        sendButton.current.style.cursor = "pointer";
+        sendButton.current.disabled = false;
+      });
   };
 
   const [inView, ref] = useCustomInView(0.3);
@@ -62,7 +122,7 @@ function Contact(props) {
     if (inView) {
       animCon.start(animationTypes.rightLeft);
     }
-  }, [inView]);
+  }, [inView, animCon]);
   return (
     <div id="contact" className="contact section">
       <h1>Get in Touch</h1>
@@ -81,6 +141,7 @@ function Contact(props) {
         className="contact-inputs"
       >
         <input
+          ref={nameRef}
           type="text"
           spellCheck="false"
           autoComplete="off"
@@ -91,6 +152,7 @@ function Contact(props) {
           placeholder="Name"
         />
         <input
+          ref={emailRef}
           spellCheck="false"
           autoComplete="off"
           type="text"
@@ -101,6 +163,7 @@ function Contact(props) {
           placeholder="Email"
         />
         <textarea
+          ref={msgRef}
           spellCheck="false"
           autoComplete="off"
           name="message"
@@ -109,8 +172,8 @@ function Contact(props) {
           value={message}
           placeholder="Message"
         ></textarea>
-        <button onClick={sendMessage} className="send-btn">
-          Send Message
+        <button ref={sendButton} onClick={sendMessage} className="send-btn">
+          {sendLoad ? <PulseLoader size="8px" color="#fff" /> : "Send"}
         </button>
 
         <ContactDiv className="address">
@@ -118,10 +181,7 @@ function Contact(props) {
             <FaEnvelope />
             <span> &nbsp; subhamdas461@gmail.com</span>
           </Address>
-          {/* <Address href="tel:8787305963">
-            <FaPhoneAlt />
-            <span>&nbsp; +91 8787305963</span>
-          </Address> */}
+
           <Address href="http://maps.google.com/?q=Tezu,Arunachal Pradesh,792001">
             <FaMapMarkerAlt />
             <span>&nbsp; Tezu, IN, 792001</span>

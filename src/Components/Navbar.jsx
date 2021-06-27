@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { FaAlignRight } from "react-icons/fa";
+import { RiBarChartHorizontalLine } from "react-icons/ri";
 
 const handleToggle = () => {
   const sidebar = document.querySelector(".sidebar");
@@ -53,12 +53,12 @@ function Navbar(props) {
   }, []);
   return (
     <div ref={nav} className={`navbar ${light_navbar}`}>
-      <FaAlignRight
+      <RiBarChartHorizontalLine
         className={`menu-bar ${light_icon}`}
         onClick={handleToggle}
       />
       <h2 className="nav-logo">
-        <a href="#home">PORTFOLIO</a>
+        <a href="#home">Subham Das</a>
       </h2>
     </div>
   );

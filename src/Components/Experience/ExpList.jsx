@@ -48,7 +48,7 @@ const ExpList = (props) => {
     if (inView) {
       animCon.start(animationTypes.topBottom);
     }
-  }, [inView]);
+  }, [inView, animCon]);
 
   return (
     <ExpContainer
@@ -67,7 +67,7 @@ const ExpList = (props) => {
           <ExpHead
             onClick={() => window.open(data.link, "_blank")}
             mode={props.mode}
-            fsize="20px"
+            fsize="17px"
           >
             <ImageLogo src={data.logo} />
             {data.org}

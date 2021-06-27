@@ -15,7 +15,6 @@ export const BigPara = styled(motion.p)`
   margin: ${(props) => props.margin};
   width: ${(props) => props.width};
   text-align: ${(props) => props.textAlign};
-  max-width: 1000px;
   flex: ${(props) => props.flex};
   margin-top: ${(prop) => prop.top};
 `;
@@ -105,7 +104,8 @@ export const ImageLogo = styled.img`
   background-color: var(--light-sidebar-bg);
 `;
 export const SmallIcon = styled.span`
-  color: red;
+  /* color: red; */
+  font-size: 18px;
   margin: 0 5px;
   display: inline-grid;
   place-items: center;

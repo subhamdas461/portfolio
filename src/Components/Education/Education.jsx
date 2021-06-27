@@ -12,7 +12,7 @@ function Education(props) {
     if (inView) {
       animate.start("show");
     }
-  }, [inView]);
+  }, [inView, animate]);
 
   return (
     <div id="education" className="education section">
