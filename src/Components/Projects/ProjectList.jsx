@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import projImg1 from "../../images/background-attach.jpg";
-import { BigPara, BoldHead } from "../../global.styles";
-import { FiExternalLink } from "react-icons/fi";
+import { BigPara, BoldHead, SimpleFlex, LinkIcon } from "../../global.styles";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { animationTypes, useCustomInView } from "../../obs.animation";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -64,14 +64,25 @@ const ProjectList = ({ data }) => {
       animate={animCon}
       transition={{ duration: 0.4, ease: "backIn" }}
       ref={ref}
-      onClick={() => {
-        window.open(data.link, "_blank");
-      }}
     >
-      <BoldHead fsize="18px">
-        {data.name} <FiExternalLink size="14px" />
-      </BoldHead>
-      <BigPara>{data.description}</BigPara>
+      <BoldHead fsize="18px">{data.name}</BoldHead>
+      <BigPara margin="5px 0">{data.description}</BigPara>
+      <SimpleFlex jusCont="center">
+        <LinkIcon
+          onClick={() => {
+            window.open(data.source, "_blank");
+          }}
+        >
+          <FiGithub title="Source Code" />
+        </LinkIcon>
+        <LinkIcon
+          onClick={() => {
+            window.open(data.link, "_blank");
+          }}
+        >
+          <FiExternalLink title="Live Demo" />
+        </LinkIcon>
+      </SimpleFlex>
     </Project>
   );
 };

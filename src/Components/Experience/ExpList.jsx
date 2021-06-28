@@ -63,7 +63,7 @@ const ExpList = (props) => {
         <RoundIcon mode={props.mode} pos="absolute" top="100%"></RoundIcon>
       )}
       <ExpDetailBox mode={props.mode}>
-        <SimpleFlex jusCont="space-between" alItem="center">
+        <SimpleFlex jusCont="space-between" alItem="center" mobBlock>
           <ExpHead
             onClick={() => window.open(data.link, "_blank")}
             mode={props.mode}

@@ -17,24 +17,28 @@ const projectsList = [
   {
     name: "Meme Stream",
     description: "Post your meme",
+    source: "",
     link: "https://xmemer-post-app.herokuapp.com/",
     img: "",
   },
   {
     name: "Signup-Login System",
     description: "Signup",
+    source: "",
     link: "",
     img: "",
   },
   {
     name: "Weather App",
     description: "Get current weather details",
+    source: "",
     link: "https://currentweather-here.web.app/",
     img: "",
   },
   {
     name: "Tic-Tac-Toe",
     description: "A simple tic-tac-toe game",
+    source: "https://github.com/subhamdas461/simple-TicTacToe",
     link: "https://github.com/subhamdas461/simple-TicTacToe",
     img: "",
   },

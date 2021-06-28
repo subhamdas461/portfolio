@@ -48,7 +48,7 @@ export const SimpleFlex = styled.div`
   justify-content: ${(props) => props.jusCont};
   align-items: ${(props) => props.alItem};
   @media only screen and (max-width: 525px) {
-    display: block;
+    display: ${(props) => (props.mobBlock ? "block" : "flex")};
     text-align: left;
   }
 `;
@@ -109,4 +109,10 @@ export const SmallIcon = styled.span`
   margin: 0 5px;
   display: inline-grid;
   place-items: center;
+`;
+
+export const LinkIcon = styled.div`
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 22px;
 `;
