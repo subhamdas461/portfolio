@@ -20,33 +20,22 @@ const Project = styled(motion.div)`
   justify-content: center;
   box-shadow: 0 0 5px 0 #00000057;
   user-select: none;
-  background-image: url(${projImg1});
+  background-image: linear-gradient(#00000068, #130f20b5), url(${projImg1});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
-  &:after {
-    content: "";
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    background-image: linear-gradient(#00000068, #130f20b5);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* opacity: 0; */
-    z-index: -1;
-  }
+
   > * {
     color: #fff !important;
     /* transition: all 0.3s ease-in-out; */
     /* opacity: 0; */
-    padding: 8px 0;
+    padding: 5px 0;
     /* transform: translateY(50px); */
   }
   &:hover {
     transform: translateY(-100px);
-    box-shadow: 0 8px 15px -6px rgba(0, 0, 0, 0.788);
+    box-shadow: 0 8px 15px -2px rgba(0, 0, 0, 0.623);
   }
 `;
 const ProjectList = ({ data }) => {
@@ -60,9 +49,9 @@ const ProjectList = ({ data }) => {
   return (
     <Project
       imgSrc={projImg1}
-      initial={{ opacity: 0, x: -100 }}
+      initial={{ opacity: 0, x: 80 }}
       animate={animCon}
-      transition={{ duration: 0.4, ease: "backIn" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       ref={ref}
     >
       <BoldHead fsize="18px">{data.name}</BoldHead>

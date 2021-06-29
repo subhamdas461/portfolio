@@ -14,7 +14,7 @@ const Image = styled(motion.img)`
   background-color: var(--dark-sidebar-bg);
 `;
 const about = {
-  one: "I'm currently a final year Computer Science and Engineering student at NIT Arunachal Pradesh. Passionate about web development and front-end design. I enjoy developing and designing products for the web.",
+  one: "I'm currently a final year undergraduate student pursing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about web development and design. My focus is to create efficient, scalable, robust systems.",
 };
 
 function About() {

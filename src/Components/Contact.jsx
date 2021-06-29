@@ -54,7 +54,7 @@ function Contact(props) {
       setName(value);
     }
     if (name === "email") {
-      setEmail(checkExtraWhiteSpce(value));
+      setEmail(value);
     }
     if (name === "message") {
       setMessage(value);

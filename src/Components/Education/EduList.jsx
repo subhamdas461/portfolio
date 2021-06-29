@@ -19,14 +19,14 @@ const EduData = [
   },
   {
     school: "Govt. Higher Secondary School, Tezu",
-    course: "12th (Higher Secondary)",
+    course: 12,
     year: "2017 - 2018",
     gpa: "Percentage : 76%",
     icon: <FaUserTie />,
   },
   {
     school: "Krick and Boury Memorial School, Tezu",
-    course: "10th (Secondary)",
+    course: 10,
     year: "2015 - 2016",
     gpa: "CGPA : 9.4",
     icon: <FaSchool />,
@@ -44,6 +44,7 @@ const EduList = (props) => {
         <EduDetail mode={props.mode}>
           <BoldHead mode={props.mode} fsize="20px">
             {e.course}
+            {typeof e.course === "number" ? <sup>th</sup> : ""}
           </BoldHead>
           <BigPara fsize="12px">( {e.year} )</BigPara>
           <BigPara margin="15px 0">{e.school}</BigPara>

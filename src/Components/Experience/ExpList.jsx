@@ -8,13 +8,9 @@ import {
   EduDetail,
   ImageLogo,
 } from "../../global.styles";
-// import { FaBriefcase, FaCode, FaHandshake } from "react-icons/fa";
-// import { MdGroup } from "react-icons/md";
+
 import styled from "styled-components";
-// import JCLogo from "../../images/jeeCarnotLogo.png";
-// import GdgLogo from "../../images/gdgLogo.bmp";
-// import ISLogo from "../../images/isLogo.bmp";
-// import CrioLogo from "../../images/crioLogoDark.jpg";
+
 import { animationTypes, useCustomInView } from "../../obs.animation";
 import { useAnimation } from "framer-motion";
 
@@ -22,7 +18,7 @@ const Italics = styled.span`
   display: block;
   color: ${(pro) => (pro.mode === "light" ? "#5a5b81" : "#b7d4ff")};
   padding: 5px 0;
-  font: italic 400 16px "Montserrat", sans-serif;
+  font: italic 400 14px "Montserrat", sans-serif;
 `;
 
 const ExpHead = styled(BoldHead)`
@@ -67,7 +63,7 @@ const ExpList = (props) => {
           <ExpHead
             onClick={() => window.open(data.link, "_blank")}
             mode={props.mode}
-            fsize="17px"
+            fsize="16px"
           >
             <ImageLogo src={data.logo} />
             {data.org}
@@ -77,7 +73,9 @@ const ExpList = (props) => {
           </BigPara>
         </SimpleFlex>
         <Italics mode={props.mode}>{data.position}</Italics>
-        <BigPara margin="15px 0">{data.tasks}</BigPara>
+        <BigPara margin="4px 0" fsize="15px">
+          {data.tasks}
+        </BigPara>
       </ExpDetailBox>
     </ExpContainer>
   );

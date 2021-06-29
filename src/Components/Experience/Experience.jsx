@@ -31,8 +31,7 @@ const ExpData = [
   },
   {
     org: "Google Developer Group, Kolkata",
-    tasks:
-      "lat necessitatibus ab unde illum asperiores corporis placeat nostrum corrupti magni a nulla natus possimus molestias facilis quam excepturi omnis. Magnam vel at velit exercitationem! Aperiam similique praesentium quam, voluptatum ipsum eligendi eum incidunt",
+    tasks: "Attended multiple events, trainings & meetings.",
     year: "Apr 2020 - present",
     position: "Member",
     logo: GdgLogo,

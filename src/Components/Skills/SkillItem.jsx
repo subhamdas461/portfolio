@@ -5,30 +5,17 @@ import { useCustomInView } from "../../obs.animation";
 
 function SkillItem(props) {
   const [progress, setProgress] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
+
   const [inView, ref] = useCustomInView(1);
   const animationCon = useAnimation();
   useEffect(() => {
     if (inView) {
-      let t = setInterval(() => {
-        setProgress((prev) => {
-          if (prev < props.progress) {
-            return prev + 1;
-          }
-          return prev;
-        });
-      }, 20);
-      setIntervalId(t);
+      setProgress(props.progress);
       animationCon.start({ width: `${props.progress}%` });
     }
     // eslint-disable-next-line
   }, [inView]);
-  useEffect(() => {
-    if (progress === props.progress) {
-      clearInterval(intervalId);
-    }
-    // eslint-disable-next-line
-  }, [progress]);
+
   return (
     <div className="skill-item">
       <p>{props.name}</p>

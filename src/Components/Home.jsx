@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { BigPara } from "../global.styles";
 const homeData = {
   name: "Hi, I'm Subham Das",
-  desc: "Student, Web Developer",
+  desc: "Student, Web Dev Intern",
   location: " Arunachal Pradesh, India",
 };
 function Home() {
@@ -69,8 +69,8 @@ function Home() {
           transition={{
             delay: 0.2,
 
-            ease: "circOut",
-            duration: 2,
+            ease: "easeInOut",
+            duration: 1.2,
           }}
           className="profile-img"
         ></motion.div>
