@@ -11,7 +11,10 @@ import CrioLogo from "../../images/crioLogoDark.jpg";
 const ExpData = [
     {
         org: "Crio.Do",
-        tasks: "Participated in Crio's Winter of Doing program (2021). Learned multiple topics on networking, REST, linux etc.",
+        tasks: [
+            "Participated in Crio's Winter of Doing program (2021).",
+            "Learned multiple topics on networking, REST, linux etc.",
+        ],
         year: "Feb 2021 - Mar 2021",
         position: "Winter of Doing Participant",
         logo: CrioLogo,
@@ -20,7 +23,11 @@ const ExpData = [
     },
     {
         org: "JEE Carnot",
-        tasks: "Developed the front-end of mentor and student pages using html, css, javascript. ",
+        tasks: [
+            "Developed the front-end of mentor and student using HTML, CSS and Javascript.",
+            "Optimisation and reusability of code.",
+            "Integration with the backend services.",
+        ],
         year: "Dec 2020 - Jan 2021",
         position: "Front-End Intern",
         logo: JCLogo,
@@ -29,7 +36,9 @@ const ExpData = [
     },
     {
         org: "Google Developer Group, Kolkata",
-        tasks: "Attended multiple events, trainings & meetings, conducted by experienced developers.",
+        tasks: [
+            "Attended multiple events, trainings & meetings, conducted by experienced developers.",
+        ],
         year: "Apr 2020 - present",
         position: "Member",
         logo: GdgLogo,
@@ -38,7 +47,7 @@ const ExpData = [
     },
     {
         org: "Internshala",
-        tasks: "This programme helped me improve my communication, marketing and leadership skills.",
+        tasks: ["Communication, marketing and leadership skills."],
         year: "Jun 2020 - Aug 2020",
         position: "Student Partner",
         logo: ISLogo,

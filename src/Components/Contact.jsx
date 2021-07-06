@@ -124,9 +124,12 @@ function Contact(props) {
                 setSendLoad(false);
                 sendButton.current.style.cursor = "pointer";
                 sendButton.current.disabled = false;
-                setServerMsg(err.message);
+                setServerMsg("Something went wrong!");
                 setIsServerMsg(true);
                 setType("error");
+                setName("");
+                setEmail("");
+                setMessage("");
             });
     };
 
@@ -144,7 +147,7 @@ function Contact(props) {
                 setIsServerMsg(false);
                 setServerMsg("");
                 setType("");
-            }, 5000);
+            }, 6000);
         }
 
         return () => clearTimeout(t_id);

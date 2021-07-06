@@ -16,15 +16,16 @@ const MessageBox = styled(motion.div)`
             ? "#25bb69"
             : props.type === "error"
             ? " #e04b4b"
-            : "#e0a75d"};
+            : "#e29f61"};
     color: #fff;
     right: 10px;
-    bottom: 20px;
+    top: 70px;
     width: 260px;
     text-align: center;
     padding: 20px 5px;
     overflow: hidden;
     border-radius: 8px;
+
     &::before {
         content: "";
         position: absolute;
@@ -35,7 +36,7 @@ const MessageBox = styled(motion.div)`
 
         background-color: inherit;
         filter: brightness(80%);
-        animation: barTimeout 5s linear;
+        animation: barTimeout 6s linear;
         animation-fill-mode: forwards;
     }
     @keyframes barTimeout {
@@ -64,7 +65,11 @@ const Message = ({ type, message }) => {
     return (
         <MessageBox
             initial={{ x: "110%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            animate={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.3, ease: "easeOut" },
+            }}
             exit={{ x: "110%", opacity: 0 }}
             type={type}
         >
