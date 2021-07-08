@@ -20,7 +20,7 @@ const Project = styled(motion.div)`
     justify-content: center;
     box-shadow: 0 0 5px 0 #00000057;
     user-select: none;
-    background-image: linear-gradient(#4d402f4b, #09080c9b),
+    background-image: linear-gradient(#00000058, #0d112cb5),
         url(${(props) => props.imgSrc});
     background-size: cover;
 

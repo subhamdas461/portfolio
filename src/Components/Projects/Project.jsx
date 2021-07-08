@@ -3,6 +3,7 @@ import xmemeImgUrl from "../../images/Xmeme.png";
 import signupImgUrl from "../../images/Signup.png";
 import tttImgUrl from "../../images/tictactoe.png";
 import weatherImgUrl from "../../images/weather.png";
+import gpCardImg from "../../images/GPCard.png";
 
 import styled from "styled-components";
 import { MainDiv } from "../../global.styles";
@@ -33,9 +34,9 @@ const projectsList = [
     {
         name: "Github-Profile-Card",
         description: "See your github profile in card view",
-        source: "https://github.com/subhamdas461/github-users",
+        source: "https://github.com/subhamdas461/github-profile-card",
         link: "https://github-users-api-461.netlify.app/",
-        img: xmemeImgUrl,
+        img: gpCardImg,
     },
     {
         name: "Weather App",
