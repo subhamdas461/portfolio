@@ -147,7 +147,7 @@ function Contact(props) {
                 setIsServerMsg(false);
                 setServerMsg("");
                 setType("");
-            }, 6000);
+            }, 4000);
         }
 
         return () => clearTimeout(t_id);

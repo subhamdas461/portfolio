@@ -36,7 +36,7 @@ const MessageBox = styled(motion.div)`
 
         background-color: inherit;
         filter: brightness(80%);
-        animation: barTimeout 6s linear;
+        animation: barTimeout 4s linear;
         animation-fill-mode: forwards;
     }
     @keyframes barTimeout {
