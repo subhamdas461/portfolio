@@ -14,7 +14,8 @@ const Image = styled(motion.img)`
     background-color: var(--dark-sidebar-bg);
 `;
 const about = {
-    one: "I'm currently a final year undergraduate student pursing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about web development and design. My focus is to create efficient, scalable and robust systems.",
+    one: "I'm currently a final year undergraduate student, pursing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about web development and design. My focus is to create efficient, scalable and robust systems.",
+    two: "I also like drawing, cycling & enjoy music.",
 };
 
 function About() {
@@ -43,9 +44,10 @@ function About() {
                     ref={para}
                     margin="10px"
                     flex="1 1 250px"
-                    lineHeight="24px"
+                    lineHeight="22px"
                 >
                     {about.one}
+                    <BigPara margin="10px 0 0 0">{about.two}</BigPara>
                 </BigPara>
                 <Image
                     initial={{ opacity: 0, x: 100 }}

@@ -14,7 +14,7 @@ const EduData = [
         school: "National Institute of Technology, Arunachal Pradesh",
         course: "B.Tech in Computer Science and Engineering",
         year: "2018 - 2022",
-        gpa: "CGPA : 8.1",
+        gpa: "CGPA : 8.1 / 10",
         icon: <FaGraduationCap />,
     },
     {
@@ -28,7 +28,7 @@ const EduData = [
         school: "Krick and Boury Memorial School, Tezu",
         course: "10th (Secondary)",
         year: "2015 - 2016",
-        gpa: "CGPA : 9.4",
+        gpa: "CGPA : 9.4 / 10",
         icon: <FaSchool />,
     },
 ];

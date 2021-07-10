@@ -32,7 +32,7 @@ const Project = styled(motion.div)`
         transition: all 0.25s ease;
         color: #fff !important;
 
-        padding: 5px 0;
+        padding: 0px 0;
     }
     &:hover {
         h2 {
@@ -58,7 +58,7 @@ const ProjectList = ({ data }) => {
             ref={ref}
         >
             <BoldHead fsize="20px">{data.name}</BoldHead>
-            <BigPara margin="5px 0">{data.description}</BigPara>
+            <BigPara margin="8px 0">{data.description}</BigPara>
             <SimpleFlex jusCont="center">
                 {data.source && (
                     <LinkIcon

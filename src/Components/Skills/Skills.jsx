@@ -16,7 +16,7 @@ function Skills() {
             progress: 65,
         },
         {
-            name: "Node / Express ",
+            name: "Node / Express",
             progress: 40,
         },
         {
@@ -24,7 +24,7 @@ function Skills() {
             progress: 30,
         },
         {
-            name: "Python",
+            name: "C / Java / Python",
             progress: 30,
         },
         {

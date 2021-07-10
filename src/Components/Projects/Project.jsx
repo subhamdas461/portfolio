@@ -32,8 +32,8 @@ const projectsList = [
         img: signupImgUrl,
     },
     {
-        name: "Github-Profile-Card",
-        description: "See your github profile in card view",
+        name: "Github-Pro-Card",
+        description: "Beautiful card view of your Github profile",
         source: "https://github.com/subhamdas461/github-profile-card",
         link: "https://github-pro-card.netlify.app/",
         img: gpCardImg,

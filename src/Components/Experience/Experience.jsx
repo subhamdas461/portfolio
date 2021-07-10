@@ -29,7 +29,7 @@ const ExpData = [
             "Integration with the backend services.",
         ],
         year: "Dec 2020 - Jan 2021",
-        position: "Front-End Intern",
+        position: "Front-End Developer Intern",
         logo: JCLogo,
         icon: <FaBriefcase />,
         link: "https://jeecarnot.com/",
