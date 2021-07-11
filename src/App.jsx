@@ -12,54 +12,54 @@ import Skills from "./Components/Skills/Skills";
 
 export const ThemeData = createContext();
 const App = () => {
-  const [mode, setMode] = useState(
-    localStorage.mode ? localStorage.mode : "dark"
-  );
+    const [mode, setMode] = useState(
+        localStorage.mode ? localStorage.mode : "dark"
+    );
 
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    localStorage.setItem("mode", mode);
-    localStorage.mode === "dark" ? setMode("dark") : setMode("light");
-  }, [mode]);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        localStorage.setItem("mode", mode);
+        localStorage.mode === "dark" ? setMode("dark") : setMode("light");
+    }, [mode]);
 
-  useEffect(() => {
-    let loadEle = document.querySelector(".main-loader");
-    let loadTimeOne = setTimeout(() => {
-      setLoading(false);
-      loadEle.classList.add("hide-loader");
-      setTimeout(() => {
-        loadEle.remove();
-      }, 500);
-    }, 500);
-    return () => {
-      clearTimeout(loadTimeOne);
-    };
-  }, [loading]);
+    useEffect(() => {
+        let loadEle = document.querySelector(".main-loader");
+        let loadTimeOne = setTimeout(() => {
+            setLoading(false);
+            loadEle.classList.add("hide-loader");
+            setTimeout(() => {
+                loadEle.remove();
+            }, 100);
+        }, 500);
+        return () => {
+            clearTimeout(loadTimeOne);
+        };
+    }, [loading]);
 
-  let light_section = mode === "dark" ? "" : "light-mode-section";
-  return (
-    !loading && (
-      <>
-        <ThemeData.Provider value={mode}>
-          <Sidebar mode={mode} changeTheme={setMode} />
-          <section
-            className={`main-content ${
-              window.innerWidth < 700 ? "active-main" : ""
-            } ${light_section}`}
-          >
-            <Navbar mode={mode} />
-            <Home />
-            <About />
-            <Education mode={mode} />
-            <Skills />
-            <Experience mode={mode} />
-            <Project />
-            <Contact mode={mode} />
-            <Footer />
-          </section>
-        </ThemeData.Provider>
-      </>
-    )
-  );
+    let light_section = mode === "dark" ? "" : "light-mode-section";
+    return (
+        !loading && (
+            <>
+                <ThemeData.Provider value={mode}>
+                    <Sidebar mode={mode} changeTheme={setMode} />
+                    <section
+                        className={`main-content ${
+                            window.innerWidth < 700 ? "active-main" : ""
+                        } ${light_section}`}
+                    >
+                        <Navbar mode={mode} />
+                        <Home />
+                        <About />
+                        <Education mode={mode} />
+                        <Skills />
+                        <Experience mode={mode} />
+                        <Project />
+                        <Contact mode={mode} />
+                        <Footer />
+                    </section>
+                </ThemeData.Provider>
+            </>
+        )
+    );
 };
 export default App;

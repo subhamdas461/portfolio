@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { useEffect } from "react";
 import { BigPara } from "../global.styles";
+
 const homeData = {
     name: "Hi, I'm Subham Das",
     desc: "Student, Web Developer",

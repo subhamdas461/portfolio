@@ -9,7 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 const Project = styled(motion.div)`
     position: relative;
     flex: 1 1 300px;
-    height: 240px;
+    height: 280px;
     margin: 12px;
     border-radius: 6px;
     text-align: center;

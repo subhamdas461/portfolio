@@ -76,7 +76,7 @@ const ExpList = (props) => {
                         mode={props.mode}
                         fsize="16px"
                     >
-                        <ImageLogo src={data.logo} />
+                        <ImageLogo alt="logo" src={data.logo} />
                         {data.org}
                     </ExpHead>
                     <BigPara flex="0 0 130px" textAlign="right" fsize="12px">

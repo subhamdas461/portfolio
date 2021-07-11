@@ -2,7 +2,7 @@ import { BigPara, FlexContainer } from "../global.styles";
 import { useCustomInView, animationTypes } from "../obs.animation";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-import ImageSrc from "../images/background-attach.jpg";
+import ImageSrc from "../images/background-attach-sm.jpg";
 import { useEffect } from "react";
 const Image = styled(motion.img)`
     width: 300px;
@@ -14,8 +14,7 @@ const Image = styled(motion.img)`
     background-color: var(--dark-sidebar-bg);
 `;
 const about = {
-    one: "I'm currently a final year undergraduate student, pursing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about web development and design. My focus is to create efficient, scalable and robust systems.",
-    two: "I also like drawing, cycling & enjoy music.",
+    one: "I'm currently a final year undergraduate student, pursing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about software development and design. My focus is to create efficient, scalable, and robust systems.",
 };
 
 function About() {
@@ -47,9 +46,9 @@ function About() {
                     lineHeight="22px"
                 >
                     {about.one}
-                    <BigPara margin="10px 0 0 0">{about.two}</BigPara>
                 </BigPara>
                 <Image
+                    alt="about-img"
                     initial={{ opacity: 0, x: 100 }}
                     animate={animationImg}
                     transition={{ ease: "backOut", duration: 1, delay: 0.3 }}

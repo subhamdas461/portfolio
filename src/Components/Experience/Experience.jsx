@@ -12,7 +12,7 @@ const ExpData = [
     {
         org: "Crio.Do",
         tasks: [
-            "Participated in Crio's Winter of Doing program (2021).",
+            "Participated in Crio's Winter of Doing program-2021.",
             "Learned multiple topics on networking, REST, linux etc.",
         ],
         year: "Feb 2021 - Mar 2021",
@@ -29,7 +29,7 @@ const ExpData = [
             "Integration with the backend services.",
         ],
         year: "Dec 2020 - Jan 2021",
-        position: "Front-End Developer Intern",
+        position: "Front-End Development Intern",
         logo: JCLogo,
         icon: <FaBriefcase />,
         link: "https://jeecarnot.com/",
