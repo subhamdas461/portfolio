@@ -121,6 +121,7 @@ function Contact(props) {
                 setType(data.status);
             })
             .catch((err) => {
+                console.log(err);
                 setSendLoad(false);
                 sendButton.current.style.cursor = "pointer";
                 sendButton.current.disabled = false;

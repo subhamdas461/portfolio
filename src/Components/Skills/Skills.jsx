@@ -37,7 +37,7 @@ function Skills() {
         },
         {
             name: "Git / ChromeDevTools / Docker",
-            progress: 40,
+            progress: 45,
         },
 
         {

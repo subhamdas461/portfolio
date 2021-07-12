@@ -13,7 +13,7 @@ import Skills from "./Components/Skills/Skills";
 export const ThemeData = createContext();
 const App = () => {
     const [mode, setMode] = useState(
-        localStorage.mode ? localStorage.mode : "dark"
+        localStorage.mode ? localStorage.mode : "light"
     );
 
     const [loading, setLoading] = useState(true);

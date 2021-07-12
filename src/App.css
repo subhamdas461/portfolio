@@ -380,17 +380,7 @@ section {
     left: 0;
     background-color: var(--btn-hover);
 }
-.skill-item .pg-percent {
-    color: #fff;
-    font-size: 12px;
-    position: absolute;
-    height: 13px;
-    top: -16px;
-    right: 0;
-    border-radius: 50%;
-    width: 13px;
-    transform: translate(50%);
-}
+
 /* ----------- */
 .contact-inputs {
     /* position: absolute; */
