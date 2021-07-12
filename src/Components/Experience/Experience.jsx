@@ -25,7 +25,7 @@ const ExpData = [
         org: "JEE Carnot",
         tasks: [
             "Developed the front-end of mentor and student using HTML, CSS and Javascript.",
-            "Optimisation and reusability of code.",
+            "Optimization and reusability of code.",
             "Integration with the backend services.",
         ],
         year: "Dec 2020 - Jan 2021",
@@ -37,7 +37,7 @@ const ExpData = [
     {
         org: "Google Developer Group, Kolkata",
         tasks: [
-            "Attended multiple events, trainings & meetings, conducted by experienced developers.",
+            "Attended multiple events & meetings, conducted by experienced developers.",
         ],
         year: "Apr 2020 - present",
         position: "Member",

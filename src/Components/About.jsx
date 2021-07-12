@@ -2,7 +2,7 @@ import { BigPara, FlexContainer } from "../global.styles";
 import { useCustomInView, animationTypes } from "../obs.animation";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-import ImageSrc from "../images/background-attach-sm.jpg";
+import ImageSrc from "../images/about-sm.jpeg";
 import { useEffect } from "react";
 const Image = styled(motion.img)`
     width: 300px;

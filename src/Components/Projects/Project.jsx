@@ -1,8 +1,8 @@
 import React from "react";
-import xmemeImgUrl from "../../images/Xmeme.png";
+import xmemeImgUrl from "../../images/Xmeme-sm.png";
 import signupImgUrl from "../../images/Signup.png";
 import tttImgUrl from "../../images/tictactoe.png";
-import weatherImgUrl from "../../images/weather.png";
+import weatherImgUrl from "../../images/weather-sm.png";
 import gpCardImg from "../../images/GPCard.png";
 import portfoliImg from "../../images/portfolio.png";
 
