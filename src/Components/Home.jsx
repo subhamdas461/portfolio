@@ -155,7 +155,7 @@ function Home() {
 
                     <motion.a
                         variants={item}
-                        href="https://twitter.com/subham_das1999"
+                        href="https://twitter.com/_subhamdas"
                         rel="noreferrer"
                         target="_blank"
                     >
