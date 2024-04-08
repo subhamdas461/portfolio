@@ -14,7 +14,7 @@ const Image = styled(motion.img)`
     background-color: var(--dark-sidebar-bg);
 `;
 const about = {
-    one: "I'm currently a final year undergraduate student, pursuing Bachelor's in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about software development and design. My focus is to create efficient, scalable, and robust systems.",
+    one: "I'm currently working as a research engineer at Samsung R&D Institute Noida. Graduated in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about software development and design. My focus is to create efficient, scalable, and robust systems.",
 };
 
 function About() {

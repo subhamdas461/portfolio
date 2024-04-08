@@ -25,7 +25,7 @@ function Skills() {
         },
         {
             name: "C / Java / Python",
-            progress: 30,
+            progress: 50,
         },
         {
             name: "DS & Algorithms",

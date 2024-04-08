@@ -14,7 +14,7 @@ const EduData = [
         school: "National Institute of Technology, Arunachal Pradesh",
         course: "B.Tech in Computer Science and Engineering",
         year: "2018 - 2022",
-        gpa: "CGPA : 8.1 / 10",
+        gpa: "CGPA : 8.13 / 10",
         icon: <FaGraduationCap />,
     },
     {

@@ -7,8 +7,22 @@ import JCLogo from "../../images/jeeCarnotLogo.png";
 import GdgLogo from "../../images/gdgLogo.bmp";
 import ISLogo from "../../images/isLogo.bmp";
 import CrioLogo from "../../images/crioLogoDark.jpg";
+import SamSungLogo from "../../images/samsung_logo.jpeg";
 
 const ExpData = [
+    {
+        org: "Samsung R&D Institute Noida",
+        tasks: [
+            "Research paper analysis in the field of machine learning.",
+            "Working with the Generative AI team.",
+            "Worked on multiple projects on android development and machine learning.",
+        ],
+        year: "Feb 2022 - Ongoing",
+        position: "Research Engineer",
+        logo: SamSungLogo,
+        icon: <FaBriefcase />,
+        link: "https://research.samsung.com/sri-n",
+    },
     {
         org: "Crio.Do",
         tasks: [

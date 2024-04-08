@@ -220,9 +220,12 @@ function Contact(props) {
                         <span> &nbsp; subhamdas461@gmail.com</span>
                     </Address>
 
-                    <Address href="http://maps.google.com/?q=Tezu,Arunachal Pradesh,792001">
+                    <Address
+                        href="https://maps.app.goo.gl/nTajxC86hCwTEHnF7"
+                        target={"_blank"}
+                    >
                         <FaMapMarkerAlt />
-                        <span>&nbsp; Tezu, IN, 792001</span>
+                        <span>&nbsp; Noida, IN, 201305</span>
                     </Address>
                 </ContactDiv>
             </motion.div>
