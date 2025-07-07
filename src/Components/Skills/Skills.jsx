@@ -4,49 +4,56 @@ import { BigPara } from "../../global.styles";
 function Skills() {
     const skillList = [
         {
-            name: "Javascript",
-            progress: 70,
+            name: "Javascript / Typescript",
+            progress: 80,
         },
         {
             name: "React",
-            progress: 50,
-        },
-        {
-            name: "HTML / CSS / Bootstrap",
             progress: 65,
         },
         {
-            name: "Node / Express",
-            progress: 40,
+            name: "HTML / CSS",
+            progress: 80,
         },
         {
-            name: "Heroku / Netlify / AWS",
-            progress: 30,
+            name: "Node.js / Express.js",
+            progress: 60,
         },
         {
-            name: "C / Java / Python",
-            progress: 50,
+            name: "AI/ML",
+            progress: 65,
         },
         {
-            name: "DS & Algorithms",
-            progress: 45,
+            name: "Git / Version Control",
+            progress: 75,
+        },
+        {
+            name: "C++ / Java / Python",
+            progress: 60,
+        },
+        {
+            name: "Data Structures & Algorithms",
+            progress: 65,
+        },
+        {
+            name: "System Design",
+            progress: 55,
         },
         {
             name: "MongoDB / MySQL",
-            progress: 40,
+            progress: 60,
         },
         {
-            name: "Git / ChromeDevTools / Docker",
-            progress: 45,
+            name: "Android",
+            progress: 50,
         },
-
         {
-            name: "Adobe Illustrator / Figma",
-            progress: 30,
+            name: "Heroku / Netlify / AWS",
+            progress: 50,
         },
     ];
     const paraText = `
-      Some familar tools and tech that I use. Learning and using these to get my objectives done.
+      I actively learn and work with a range of familiar tools and technologies to effectively achieve project goals and drive results.
   `;
     return (
         <div id="skills" className="skills section">

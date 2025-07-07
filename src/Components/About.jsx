@@ -14,7 +14,9 @@ const Image = styled(motion.img)`
     background-color: var(--dark-sidebar-bg);
 `;
 const about = {
-    one: "I'm currently working as a research engineer at Samsung R&D Institute Noida. Graduated in Computer Science and Engineering from NIT Arunachal Pradesh. Passionate about software development and design. My focus is to create efficient, scalable, and robust systems.",
+    one: "I am a Software Engineer at Samsung R&D Institute, Noida, with a Bachelor’s degree in Computer Science and Engineering from NIT Arunachal Pradesh. I specialize in full-stack development, with additional experience in AI integration and Android application development.",
+    two: "At Samsung, I have led end-to-end development of full-stack web applications, built scalable dashboards to accelerate AI model development. I bring a strong foundation in both frontend and backend technologies, complemented by hands-on work in machine learning and speech technologies.",
+    three: "I am passionate about building robust, user-centric systems that blend modern web development, intelligent features, and seamless cross-platform performance.",
 };
 
 function About() {
@@ -46,6 +48,12 @@ function About() {
                     lineHeight="22px"
                 >
                     {about.one}
+                    <br />
+                    <br />
+                    {about.two}
+                    <br />
+                    <br />
+                    {about.three}
                 </BigPara>
                 <Image
                     alt="about-img"

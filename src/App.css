@@ -283,10 +283,10 @@ section {
     width: 200px;
     height: 200px;
     margin: auto;
-    background-image: url("./images/profilepic2.jpg");
-    background-size: 120%;
+    background-image: url("./images/Professional_Pic.jpeg");
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: 0 -10px;
     background-color: rgb(201, 201, 201);
     border-radius: 50%;
     border: 7px solid rgb(255, 255, 255);

@@ -13,8 +13,8 @@ import { BigPara } from "../global.styles";
 
 const homeData = {
     name: "Hi, I'm Subham Das",
-    desc: "R&D Engineer, Samsung R&D Institute Noida",
-    location: " Uttar Pradesh, India",
+    desc: "Software Engineer @ Samsung Research",
+    location: " Noida, India",
 };
 function Home() {
     const { ref, inView } = useInView({
