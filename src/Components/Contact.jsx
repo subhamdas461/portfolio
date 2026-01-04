@@ -215,17 +215,17 @@ function Contact(props) {
                 </button>
 
                 <ContactDiv className="address">
-                    <Address href="mailto:subhamdas461@gmail.com">
+                    <Address href="mailto:subham.das0699@gmail.com">
                         <FaEnvelope />
-                        <span> &nbsp; subhamdas461@gmail.com</span>
+                        <span> &nbsp; subham.das0699@gmail.com</span>
                     </Address>
 
                     <Address
-                        href="https://maps.app.goo.gl/nTajxC86hCwTEHnF7"
+                        href="https://maps.app.goo.gl/nTajxC86hC"
                         target={"_blank"}
                     >
                         <FaMapMarkerAlt />
-                        <span>&nbsp; Noida, IN, 201305</span>
+                        <span>&nbsp; Noida, IN, 201321</span>
                     </Address>
                 </ContactDiv>
             </motion.div>
